@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c630iq5w8ibx"
+path="res://.godot/imported/Right Hit (42x42).png-10c3e3dcde4d880fb29e4e504552d625.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Pixel Adventure pack/Free/Traps/Rock Head/Right Hit (42x42).png"
+dest_files=["res://.godot/imported/Right Hit (42x42).png-10c3e3dcde4d880fb29e4e504552d625.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

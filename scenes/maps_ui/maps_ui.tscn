@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ka8ncedrcat"]
+
+[ext_resource type="PackedScene" uid="uid://dvpocbbp35hdk" path="res://scenes/tile_ui/tile_ui.tscn" id="1_1hb4b"]
+
+[node name="MapsUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileUI" parent="." instance=ExtResource("1_1hb4b")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TileUI2" parent="." instance=ExtResource("1_1hb4b")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 48.0
+grow_vertical = 1
+
+[node name="TileUI3" parent="." instance=ExtResource("1_1hb4b")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -48.0
+offset_right = 0.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7k208jay22f"]
+
+[sub_resource type="Curve" id="Curve_qcf0p"]
+min_value = 0.2
+_data = [Vector2(0.031579, 0.217582), 0.0, 0.0, 0, 0, Vector2(0.921053, 1), 0.0, 0.0, 0, 0, Vector2(0.984211, 0.243956), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Road" type="Line2D"]
+width = 4.0
+width_curve = SubResource("Curve_qcf0p")

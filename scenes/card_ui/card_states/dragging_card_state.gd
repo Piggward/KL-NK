@@ -17,6 +17,12 @@ func on_input(_event: InputEvent) -> void:
 func on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
+	
+	elif event.is_action_pressed("left_mouse"):
+		transition_requested.emit(self, CardState.State.RELEASED)
+	
+	elif event.is_action_pressed("right_mouse"):
+		transition_requested.emit(self, CardState.State.BASE)
 	pass
 
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du10ebuf0dbsb"
-path="res://.godot/imported/Jump (32x32).png-75a610b31d8735774f0aea776130e571.ctex"
+path="res://.godot/imported/Jump (32x32).png-3c766f8e6a83f2f31e6279c1272a5398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Pink Man/Jump (32x32).png"
-dest_files=["res://.godot/imported/Jump (32x32).png-75a610b31d8735774f0aea776130e571.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Pink Man/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-3c766f8e6a83f2f31e6279c1272a5398.ctex"]
 
 [params]
 

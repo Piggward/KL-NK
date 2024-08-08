@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxlpab2gvccyt"
-path="res://.godot/imported/Wall Jump (32x32).png-1ed3690bd0a51663f3230c8d571fda59.ctex"
+path="res://.godot/imported/Wall Jump (32x32).png-fb90850dae6db63348b7d757e4c9020c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Ninja Frog/Wall Jump (32x32).png"
-dest_files=["res://.godot/imported/Wall Jump (32x32).png-1ed3690bd0a51663f3230c8d571fda59.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Ninja Frog/Wall Jump (32x32).png"
+dest_files=["res://.godot/imported/Wall Jump (32x32).png-fb90850dae6db63348b7d757e4c9020c.ctex"]
 
 [params]
 

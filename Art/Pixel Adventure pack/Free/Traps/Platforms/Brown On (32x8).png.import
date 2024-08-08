@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lsdpuluhqot5"
-path="res://.godot/imported/Brown On (32x8).png-47dbfcc249edcd07885efa9d682f7b62.ctex"
+path="res://.godot/imported/Brown On (32x8).png-47e8972839b4399b65da75ab870b57a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Traps/Platforms/Brown On (32x8).png"
-dest_files=["res://.godot/imported/Brown On (32x8).png-47dbfcc249edcd07885efa9d682f7b62.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Traps/Platforms/Brown On (32x8).png"
+dest_files=["res://.godot/imported/Brown On (32x8).png-47e8972839b4399b65da75ab870b57a8.ctex"]
 
 [params]
 

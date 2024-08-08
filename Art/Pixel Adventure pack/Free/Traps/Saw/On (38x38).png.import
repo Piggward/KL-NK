@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byv3n1gnejmam"
-path="res://.godot/imported/On (38x38).png-f6c1c6c5a3d703d4f71df9d9cf5742bf.ctex"
+path="res://.godot/imported/On (38x38).png-5d0959d956b18a2bd6d8872b8cb53990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Traps/Saw/On (38x38).png"
-dest_files=["res://.godot/imported/On (38x38).png-f6c1c6c5a3d703d4f71df9d9cf5742bf.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Traps/Saw/On (38x38).png"
+dest_files=["res://.godot/imported/On (38x38).png-5d0959d956b18a2bd6d8872b8cb53990.ctex"]
 
 [params]
 

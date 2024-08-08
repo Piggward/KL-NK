@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boty1lhuvj31x"
-path="res://.godot/imported/Appearing (96x96).png-85698c7d922e6d2f19ff7ec97941e92a.ctex"
+path="res://.godot/imported/Appearing (96x96).png-4d2acbe69bf3a2e0c099ed76e9565448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Appearing (96x96).png"
-dest_files=["res://.godot/imported/Appearing (96x96).png-85698c7d922e6d2f19ff7ec97941e92a.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Appearing (96x96).png"
+dest_files=["res://.godot/imported/Appearing (96x96).png-4d2acbe69bf3a2e0c099ed76e9565448.ctex"]
 
 [params]
 

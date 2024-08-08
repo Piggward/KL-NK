@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cds4hvh3yoelr"
-path="res://.godot/imported/Run (32x32).png-d16ccaf091bd8d6f17ee6c9057599220.ctex"
+path="res://.godot/imported/Run (32x32).png-b51295f91463503ed9e472acc788c9db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Mask Dude/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-d16ccaf091bd8d6f17ee6c9057599220.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Mask Dude/Run (32x32).png"
+dest_files=["res://.godot/imported/Run (32x32).png-b51295f91463503ed9e472acc788c9db.ctex"]
 
 [params]
 

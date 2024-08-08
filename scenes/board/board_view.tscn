@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dkgc372o3m74y"]
+
+[node name="BoardView" type="Node2D"]
+
+[node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]

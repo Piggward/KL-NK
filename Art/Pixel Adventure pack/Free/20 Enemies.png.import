@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3js0uwd1lgj3"
-path="res://.godot/imported/20 Enemies.png-3690ae5578eccace3865b152549d7a5c.ctex"
+path="res://.godot/imported/20 Enemies.png-24c274df48c017d480288bb78a1384fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/20 Enemies.png"
-dest_files=["res://.godot/imported/20 Enemies.png-3690ae5578eccace3865b152549d7a5c.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/20 Enemies.png"
+dest_files=["res://.godot/imported/20 Enemies.png-24c274df48c017d480288bb78a1384fb.ctex"]
 
 [params]
 

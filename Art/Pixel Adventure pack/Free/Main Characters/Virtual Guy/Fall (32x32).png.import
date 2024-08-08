@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du8n0dg87ijq4"
-path="res://.godot/imported/Fall (32x32).png-80cb6b8bc5246cb346a708c640c89442.ctex"
+path="res://.godot/imported/Fall (32x32).png-b7313c3607fb713a2b698e2f39af6622.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Virtual Guy/Fall (32x32).png"
-dest_files=["res://.godot/imported/Fall (32x32).png-80cb6b8bc5246cb346a708c640c89442.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Virtual Guy/Fall (32x32).png"
+dest_files=["res://.godot/imported/Fall (32x32).png-b7313c3607fb713a2b698e2f39af6622.ctex"]
 
 [params]
 

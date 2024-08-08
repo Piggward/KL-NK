@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c86g8j1pdjt5h"
-path="res://.godot/imported/Hit (32x32).png-a10f9a6c3b3de561e62253657cf32c95.ctex"
+path="res://.godot/imported/Hit (32x32).png-181704526abea679febfc9792b4483a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Main Characters/Ninja Frog/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-a10f9a6c3b3de561e62253657cf32c95.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Main Characters/Ninja Frog/Hit (32x32).png"
+dest_files=["res://.godot/imported/Hit (32x32).png-181704526abea679febfc9792b4483a8.ctex"]
 
 [params]
 

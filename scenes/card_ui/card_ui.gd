@@ -1,10 +1,12 @@
 class_name CardUI
 extends Control
 
+signal reparent_requested(which_card_ui: CardUI)
 @onready var color = $Color
 @onready var state = $State
 @onready var card_state_machine = $CardStateMachine as CardStateMachine
 
+var parent: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _input(event: InputEvent) -> void:
+	card_state_machine.on_input(event)
 
 func _on_mouse_entered():
 	card_state_machine.on_mouse_entered()

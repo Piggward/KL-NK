@@ -13,7 +13,7 @@ config_version=5
 config/name="Kl-nk"
 run/main_scene="res://scenes/tile_ui/tile_ui.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Art/Clank!/ClankProjectIcon.png"
 
 [input]
 

@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://co7k208jay22f"]
+[gd_scene load_steps=3 format=3 uid="uid://co7k208jay22f"]
+
+[ext_resource type="Script" path="res://scenes/road/road.gd" id="1_dtb2r"]
 
 [sub_resource type="Curve" id="Curve_qcf0p"]
-min_value = 0.2
-_data = [Vector2(0.031579, 0.217582), 0.0, 0.0, 0, 0, Vector2(0.921053, 1), 0.0, 0.0, 0, 0, Vector2(0.984211, 0.243956), 0.0, 0.0, 0, 0]
-point_count = 3
+min_value = 0.3
+max_value = 4.0
+_data = [Vector2(0, 0.322141), 0.0, 0.0, 0, 0, Vector2(0.592715, 0.54601), 0.827863, 0.827863, 0, 0, Vector2(0.897351, 1.37753), 6.5539, 6.5539, 0, 0, Vector2(0.950331, 3.6482), 0.0, 0.0, 0, 0, Vector2(1, 0.354122), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [node name="Road" type="Line2D"]
 width = 4.0
 width_curve = SubResource("Curve_qcf0p")
+script = ExtResource("1_dtb2r")

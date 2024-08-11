@@ -1,6 +1,7 @@
 class_name CardUI
 extends Control
 
+@export var card : Card
 signal reparent_requested(which_card_ui: CardUI)
 @onready var color = $Color
 @onready var state = $State
@@ -15,7 +16,6 @@ var parent: Control
 func _ready():
 	card_state_machine.init(self)
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

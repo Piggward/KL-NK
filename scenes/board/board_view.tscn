@@ -17,9 +17,9 @@ scale = Vector2(17.9902, 10.113)
 texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
-[node name="DropPointDetector" type="Area2D" parent="."]
+[node name="CardPlayArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
 position = Vector2(1062, 552.5)
 shape = SubResource("RectangleShape2D_cc87n")
 

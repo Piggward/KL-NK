@@ -5,6 +5,9 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var color = $Color
 @onready var state = $State
 @onready var card_state_machine = $CardStateMachine as CardStateMachine
+@onready var drop_point_detector = $DropPointDetector
+@onready var targets: Array[Node] = []
+
 
 var parent: Control
 
@@ -32,3 +35,9 @@ func _on_gui_input(event) -> void:
 	card_state_machine.on_gui_input(event)
 
 
+func _on_drop_point_detector_area_entered(area):
+	if not targets.has(area):
+		targets.append(area)
+
+func _on_drop_point_detector_area_exited(area):
+	targets.erase(area)

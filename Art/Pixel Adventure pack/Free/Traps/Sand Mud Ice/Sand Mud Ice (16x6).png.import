@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqhyqjlpev37x"
-path="res://.godot/imported/Sand Mud Ice (16x6).png-1a056e03688b1faed4fa29265babe64a.ctex"
+path="res://.godot/imported/Sand Mud Ice (16x6).png-8fc5145da6f722f5fe5dd62a2bb90914.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Traps/Sand Mud Ice/Sand Mud Ice (16x6).png"
-dest_files=["res://.godot/imported/Sand Mud Ice (16x6).png-1a056e03688b1faed4fa29265babe64a.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Traps/Sand Mud Ice/Sand Mud Ice (16x6).png"
+dest_files=["res://.godot/imported/Sand Mud Ice (16x6).png-8fc5145da6f722f5fe5dd62a2bb90914.ctex"]
 
 [params]
 

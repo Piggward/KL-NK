@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkgc372o3m74y"]
+
+[ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
+[ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
+[ext_resource type="PackedScene" uid="uid://n2mgpmoqsqb" path="res://scenes/card_ui/card_ui.tscn" id="2_ild30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
+size = Vector2(176, 189)
+
+[node name="BoardView" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.431373, 0.392157, 0.352941, 1)
+texture_filter = 1
+position = Vector2(575, 325)
+scale = Vector2(17.9902, 10.113)
+texture = ExtResource("1_l6clk")
+metadata/_edit_lock_ = true
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(1062, 552.5)
+shape = SubResource("RectangleShape2D_cc87n")
+
+[node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="Hand" type="HBoxContainer" parent="BoardUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -110.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("2_20mwe")
+
+[node name="CardUi" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+
+[node name="CardUi2" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+
+[node name="CardUi3" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+
+[node name="CardUi4" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2

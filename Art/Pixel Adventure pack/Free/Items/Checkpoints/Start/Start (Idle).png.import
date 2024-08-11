@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br40q5i5olkfw"
-path="res://.godot/imported/Start (Idle).png-21d85802f97f9dc179ae12a95c1f1275.ctex"
+path="res://.godot/imported/Start (Idle).png-976d71bb794095d2734eb82cf1edc1b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Items/Checkpoints/Start/Start (Idle).png"
-dest_files=["res://.godot/imported/Start (Idle).png-21d85802f97f9dc179ae12a95c1f1275.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Items/Checkpoints/Start/Start (Idle).png"
+dest_files=["res://.godot/imported/Start (Idle).png-976d71bb794095d2734eb82cf1edc1b3.ctex"]
 
 [params]
 

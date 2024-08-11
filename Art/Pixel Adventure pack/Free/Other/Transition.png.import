@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db0j4fsbj5ggb"
-path="res://.godot/imported/Transition.png-c1ea8846046163e934db07c9568701eb.ctex"
+path="res://.godot/imported/Transition.png-a7e42bf1afeddf8b8d408ce2ca93ea33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Other/Transition.png"
-dest_files=["res://.godot/imported/Transition.png-c1ea8846046163e934db07c9568701eb.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Other/Transition.png"
+dest_files=["res://.godot/imported/Transition.png-a7e42bf1afeddf8b8d408ce2ca93ea33.ctex"]
 
 [params]
 

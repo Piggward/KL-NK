@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uqds6npqcp7i"
-path="res://.godot/imported/Orange.png-815c09a7eafe62aacae1203fb7aadedb.ctex"
+path="res://.godot/imported/Orange.png-56816946815115fb4f1fdf5d370189bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Items/Fruits/Orange.png"
-dest_files=["res://.godot/imported/Orange.png-815c09a7eafe62aacae1203fb7aadedb.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Items/Fruits/Orange.png"
+dest_files=["res://.godot/imported/Orange.png-56816946815115fb4f1fdf5d370189bf.ctex"]
 
 [params]
 

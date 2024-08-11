@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dune5wggl6g8k"
-path="res://.godot/imported/End (Idle).png-11a00319376640d2081ee608b02f4d66.ctex"
+path="res://.godot/imported/End (Idle).png-592f7aa9a4b3dbf74e65a965ec6f7a2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Items/Checkpoints/End/End (Idle).png"
-dest_files=["res://.godot/imported/End (Idle).png-11a00319376640d2081ee608b02f4d66.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Items/Checkpoints/End/End (Idle).png"
+dest_files=["res://.godot/imported/End (Idle).png-592f7aa9a4b3dbf74e65a965ec6f7a2d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djpglonesg2fk"
-path="res://.godot/imported/Off.png-744a96945e9b712a177e317a178f35ed.ctex"
+path="res://.godot/imported/Off.png-af569768255648ad9433cbc329a3ac97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure pack/Free/Traps/Saw/Off.png"
-dest_files=["res://.godot/imported/Off.png-744a96945e9b712a177e317a178f35ed.ctex"]
+source_file="res://Art/Pixel Adventure pack/Free/Traps/Saw/Off.png"
+dest_files=["res://.godot/imported/Off.png-af569768255648ad9433cbc329a3ac97.ctex"]
 
 [params]
 

@@ -15,6 +15,10 @@ run/main_scene="res://scenes/board/board_view.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Art/Clank!/ClankProjectIcon.png"
 
+[autoload]
+
+Events="*res://global/events.gd"
+
 [input]
 
 left_mouse={

@@ -13,9 +13,6 @@ func enter() -> void:
 	if(ui_layer):
 		card_ui.reparent(ui_layer)
 	
-	card_ui.color.color = Color.BLUE
-	card_ui.state.text ="DRAGGING"
-	
 	# When you enter this state a timer for DRAG_MINIMUM_THRESHOLD time is started.
 	minimum_drag_time_elapsed = false
 	var threshold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
@@ -36,7 +33,7 @@ func on_input(event: InputEvent) -> void:
 	# We dont release the card unless the timer has lapsed out. 
 	elif release and minimum_drag_time_elapsed:
 		if(not can_release()):
-			card_ui.state.text = "CANT HERE!"
+			pass
 		else:
 			transition_requested.emit(self, CardState.State.RELEASED)
 	

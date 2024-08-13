@@ -8,13 +8,27 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var card_state_machine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
-
+@onready var icon_area = $IconArea
+const BOOT_ICON = preload("res://scenes/card_ui/card_symbols/boot_icon.tscn")
+const SWORD_ICON = preload("res://scenes/card_ui/card_symbols/sword_icon.tscn")
+const SKILL_ICON = preload("res://scenes/card_ui/card_symbols/skill_icon.tscn")
 
 var parent: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_state_machine.init(self)
+	if card.skill > 0:
+		var skill_icon := SKILL_ICON.instantiate()
+		var amount = skill_icon.get_child(1)
+		amount.text = str(card.skill)
+		icon_area.add_child(skill_icon)
+	for i in card.boots:
+		var boot_icon := BOOT_ICON.instantiate()
+		icon_area.add_child(boot_icon)
+	for i in card.swords:
+		var sword_icon := SWORD_ICON.instantiate()
+		icon_area.add_child(sword_icon)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

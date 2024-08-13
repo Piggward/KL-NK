@@ -5,10 +5,6 @@ const DRAG_MINIMUM_THRESHOLD := 0.07
 var minimum_drag_time_elapsed := false
 
 func enter() -> void:
-	# change appearance
-	card_ui.color.color = Color.DARK_SALMON
-	card_ui.state.text = "released"
-	
 	# set position
 	var card_area = card_ui.targets.front()
 	card_ui.global_position = card_area.global_position - card_ui.size / 2

@@ -1,28 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=9 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
 [ext_resource type="PackedScene" uid="uid://n2mgpmoqsqb" path="res://scenes/card_ui/card_ui.tscn" id="2_ild30"]
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="4_bjukt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
-size = Vector2(176, 189)
+size = Vector2(232, 435.5)
+
+[sub_resource type="Resource" id="Resource_75krm"]
+script = ExtResource("4_bjukt")
+skill = 4
+score = 0
+boots = 1
+swords = 1
+
+[sub_resource type="Resource" id="Resource_2uyk3"]
+script = ExtResource("4_bjukt")
+skill = 0
+score = 0
+boots = 2
+swords = 1
+
+[sub_resource type="Resource" id="Resource_lfqpb"]
+script = ExtResource("4_bjukt")
+skill = 1
+score = 0
+boots = 0
+swords = 2
 
 [node name="BoardView" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.431373, 0.392157, 0.352941, 1)
 texture_filter = 1
-position = Vector2(575, 325)
-scale = Vector2(17.9902, 10.113)
+position = Vector2(921.157, 585.192)
+scale = Vector2(28.8076, 18.244)
 texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
 [node name="CardPlayArea" type="Area2D" parent="." groups=["card_play_area"]]
-position = Vector2(1063, 554)
+position = Vector2(1034, 430)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_cc87n")
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
@@ -43,9 +64,12 @@ script = ExtResource("2_20mwe")
 
 [node name="CardUi2" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
 layout_mode = 2
+card = SubResource("Resource_75krm")
 
 [node name="CardUi3" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
 layout_mode = 2
+card = SubResource("Resource_2uyk3")
 
 [node name="CardUi4" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
 layout_mode = 2
+card = SubResource("Resource_lfqpb")

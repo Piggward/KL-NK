@@ -1,8 +1,6 @@
 extends CardState
 
 func enter() -> void:
-	card_ui.color.color = Color.REBECCA_PURPLE
-	card_ui.state.text ="CLICKED"
 	card_ui.drop_point_detector.monitoring = true
 
 func exit() -> void:

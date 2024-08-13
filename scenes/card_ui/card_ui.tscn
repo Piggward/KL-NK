@@ -8,46 +8,26 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/released_card_state.gd" id="6_axg88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12cb"]
-size = Vector2(80, 110)
+size = Vector2(151, 202)
 
 [node name="CardUi" type="Control"]
-custom_minimum_size = Vector2(80, 110)
+custom_minimum_size = Vector2(80, 100)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1072.0
-offset_bottom = -538.0
+offset_bottom = -548.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ege2o")
-
-[node name="Color" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.615686, 0.533333, 0.47451, 1)
-
-[node name="State" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "State"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
-position = Vector2(40, 55)
+position = Vector2(39, 51)
+scale = Vector2(0.517239, 0.502277)
 shape = SubResource("RectangleShape2D_e12cb")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -68,6 +48,13 @@ state = 2
 [node name="ReleasedCardState" type="Node" parent="CardStateMachine"]
 script = ExtResource("6_axg88")
 state = 3
+
+[node name="IconArea" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 57.0
+offset_bottom = 80.0
+scale = Vector2(0.514755, 0.982607)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

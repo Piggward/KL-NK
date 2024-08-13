@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=12 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
 [ext_resource type="PackedScene" uid="uid://n2mgpmoqsqb" path="res://scenes/card_ui/card_ui.tscn" id="2_ild30"]
+[ext_resource type="Texture2D" uid="uid://csdocgvkuen27" path="res://Art/Clank!/Boot-Icon.png" id="3_txdnp"]
+[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://Art/SlayTheSpireTutorialArt/tile_0107.png" id="4_76e2o"]
 [ext_resource type="Script" path="res://resources/card_resources/card.gd" id="4_bjukt"]
+[ext_resource type="Texture2D" uid="uid://db0j4fsbj5ggb" path="res://Art/Pixel Adventure pack/Free/Other/Transition.png" id="5_itrut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
 size = Vector2(232, 435.5)
@@ -11,14 +14,14 @@ size = Vector2(232, 435.5)
 [sub_resource type="Resource" id="Resource_75krm"]
 script = ExtResource("4_bjukt")
 skill = 4
-score = 0
+score = 1
 boots = 1
 swords = 1
 
 [sub_resource type="Resource" id="Resource_2uyk3"]
 script = ExtResource("4_bjukt")
 skill = 0
-score = 0
+score = 5
 boots = 2
 swords = 1
 
@@ -40,11 +43,148 @@ texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
 [node name="CardPlayArea" type="Area2D" parent="." groups=["card_play_area"]]
-position = Vector2(1034, 430)
+position = Vector2(1057, 533)
+scale = Vector2(0.814951, 0.525574)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
 shape = SubResource("RectangleShape2D_cc87n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardPlayArea"]
+custom_minimum_size = Vector2(10, 10)
+offset_left = -115.344
+offset_top = -218.808
+offset_right = -82.3443
+offset_bottom = -206.808
+scale = Vector2(3.4058, 6.48151)
+
+[node name="Boots" type="Control" parent="CardPlayArea/HBoxContainer"]
+custom_minimum_size = Vector2(20, 12)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Boots"]
+custom_minimum_size = Vector2(10, 12)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 10.0
+offset_bottom = 12.0
+
+[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Boots/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_txdnp")
+expand_mode = 5
+
+[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Boots"]
+custom_minimum_size = Vector2(10, 12)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -9.19137
+offset_top = -12.1647
+offset_right = 1.80863
+offset_bottom = 10.8353
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = ":2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Swords" type="Control" parent="CardPlayArea/HBoxContainer"]
+custom_minimum_size = Vector2(20, 12)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Swords"]
+custom_minimum_size = Vector2(10, 12)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 10.0
+offset_bottom = 12.0
+
+[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Swords/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_76e2o")
+expand_mode = 5
+
+[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Swords"]
+custom_minimum_size = Vector2(10, 12)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = ":2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skills" type="Control" parent="CardPlayArea/HBoxContainer"]
+custom_minimum_size = Vector2(20, 12)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Skills"]
+custom_minimum_size = Vector2(10, 12)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 10.0
+offset_bottom = 12.0
+
+[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Skills/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_itrut")
+expand_mode = 5
+
+[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Skills"]
+custom_minimum_size = Vector2(10, 12)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.3539
+offset_top = -11.5776
+offset_right = 0.646072
+offset_bottom = 11.4224
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = ":2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 

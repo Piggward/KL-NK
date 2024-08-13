@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhaewd785ypn"]
+
+[ext_resource type="Texture2D" uid="uid://bogfvhemhrfmd" path="res://Art/Clank!/Score-Icon.png" id="1_l1wyh"]
+
+[node name="SkillIcon" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Shape" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.43804, 0.553097)
+texture = ExtResource("1_l1wyh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 35.0
+scale = Vector2(0.501355, 0.617719)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

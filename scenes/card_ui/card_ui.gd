@@ -9,15 +9,23 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
 @onready var icon_area = $IconArea
+@onready var score_area = $ScoreArea
+
 const BOOT_ICON = preload("res://scenes/card_ui/card_symbols/boot_icon.tscn")
 const SWORD_ICON = preload("res://scenes/card_ui/card_symbols/sword_icon.tscn")
 const SKILL_ICON = preload("res://scenes/card_ui/card_symbols/skill_icon.tscn")
+const SCORE_ICON = preload("res://scenes/card_ui/card_symbols/score_icon.tscn")
 
 var parent: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_state_machine.init(self)
+	if card.score > 0:
+		var score_icon = SCORE_ICON.instantiate()
+		var amount = score_icon.get_child(1)
+		amount.text = str(card.score)
+		score_area.add_child(score_icon)
 	if card.skill > 0:
 		var skill_icon := SKILL_ICON.instantiate()
 		var amount = skill_icon.get_child(1)

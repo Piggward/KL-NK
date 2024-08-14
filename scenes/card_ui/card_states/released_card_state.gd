@@ -27,6 +27,7 @@ func on_input(_event: InputEvent) -> void:
 func on_gui_input(_event: InputEvent) -> void:
 	if _event.is_action_pressed(("left_mouse")) and minimum_drag_time_elapsed:
 		transition_requested.emit(self, CardState.State.BASE)
+		Events.card_removed.emit(card_ui.card)
 	pass
 
 

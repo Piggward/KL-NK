@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
+[ext_resource type="PackedScene" uid="uid://cyesjys2df0k0" path="res://scenes/card_play_area/played_icon_display.tscn" id="2_gki5r"]
 [ext_resource type="PackedScene" uid="uid://n2mgpmoqsqb" path="res://scenes/card_ui/card_ui.tscn" id="2_ild30"]
-[ext_resource type="Texture2D" uid="uid://csdocgvkuen27" path="res://Art/Clank!/Boot-Icon.png" id="3_txdnp"]
-[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://Art/SlayTheSpireTutorialArt/tile_0107.png" id="4_76e2o"]
+[ext_resource type="Script" path="res://scenes/card_play_area/played_icon_display.gd" id="3_r1enh"]
 [ext_resource type="Script" path="res://resources/card_resources/card.gd" id="4_bjukt"]
-[ext_resource type="Texture2D" uid="uid://db0j4fsbj5ggb" path="res://Art/Pixel Adventure pack/Free/Other/Transition.png" id="5_itrut"]
+[ext_resource type="Script" path="res://scenes/TurnManager/turn_manager.gd" id="8_1e80b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
 size = Vector2(232, 435.5)
@@ -50,141 +50,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
 shape = SubResource("RectangleShape2D_cc87n")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CardPlayArea"]
-custom_minimum_size = Vector2(10, 10)
-offset_left = -115.344
-offset_top = -218.808
-offset_right = -82.3443
-offset_bottom = -206.808
-scale = Vector2(3.4058, 6.48151)
-
-[node name="Boots" type="Control" parent="CardPlayArea/HBoxContainer"]
-custom_minimum_size = Vector2(20, 12)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Boots"]
-custom_minimum_size = Vector2(10, 12)
-layout_direction = 1
-layout_mode = 3
-anchors_preset = 0
-offset_right = 10.0
-offset_bottom = 12.0
-
-[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Boots/Control"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_txdnp")
-expand_mode = 5
-
-[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Boots"]
-custom_minimum_size = Vector2(10, 12)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -9.19137
-offset_top = -12.1647
-offset_right = 1.80863
-offset_bottom = 10.8353
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
-text = ":2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Swords" type="Control" parent="CardPlayArea/HBoxContainer"]
-custom_minimum_size = Vector2(20, 12)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Swords"]
-custom_minimum_size = Vector2(10, 12)
-layout_direction = 1
-layout_mode = 3
-anchors_preset = 0
-offset_right = 10.0
-offset_bottom = 12.0
-
-[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Swords/Control"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_76e2o")
-expand_mode = 5
-
-[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Swords"]
-custom_minimum_size = Vector2(10, 12)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
-text = ":2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Skills" type="Control" parent="CardPlayArea/HBoxContainer"]
-custom_minimum_size = Vector2(20, 12)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="CardPlayArea/HBoxContainer/Skills"]
-custom_minimum_size = Vector2(10, 12)
-layout_direction = 1
-layout_mode = 3
-anchors_preset = 0
-offset_right = 10.0
-offset_bottom = 12.0
-
-[node name="TextureRect" type="TextureRect" parent="CardPlayArea/HBoxContainer/Skills/Control"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_itrut")
-expand_mode = 5
-
-[node name="amount" type="Label" parent="CardPlayArea/HBoxContainer/Skills"]
-custom_minimum_size = Vector2(10, 12)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -10.3539
-offset_top = -11.5776
-offset_right = 0.646072
-offset_bottom = 11.4224
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
-text = ":2"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="PlayedIconDisplay" parent="CardPlayArea" instance=ExtResource("2_gki5r")]
+script = ExtResource("3_r1enh")
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -213,3 +80,6 @@ card = SubResource("Resource_2uyk3")
 [node name="CardUi4" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
 layout_mode = 2
 card = SubResource("Resource_lfqpb")
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource("8_1e80b")

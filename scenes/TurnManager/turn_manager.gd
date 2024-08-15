@@ -20,7 +20,6 @@ func _on_card_played(card: Card) -> void:
 	currentBoots += card.boots
 	currentSkill += card.skill
 	currentSwords += card.swords
-	
 	update_icons.emit(currentBoots, currentSwords, currentSkill)
 	pass
 	
@@ -28,6 +27,7 @@ func _on_card_removed(card: Card) -> void:
 	currentBoots -= card.boots
 	currentSkill -= card.skill
 	currentSwords -= card.swords
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

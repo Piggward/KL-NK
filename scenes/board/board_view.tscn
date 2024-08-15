@@ -9,14 +9,14 @@
 [ext_resource type="Script" path="res://scenes/TurnManager/turn_manager.gd" id="8_1e80b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
-size = Vector2(232, 435.5)
+size = Vector2(232, 334.872)
 
 [sub_resource type="Resource" id="Resource_75krm"]
 script = ExtResource("4_bjukt")
-skill = 0
-score = 0
-boots = 0
-swords = 0
+skill = 2
+score = 3
+boots = 1
+swords = 2
 
 [sub_resource type="Resource" id="Resource_2uyk3"]
 script = ExtResource("4_bjukt")
@@ -43,14 +43,20 @@ texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
 [node name="CardPlayArea" type="Area2D" parent="." groups=["card_play_area"]]
-position = Vector2(1057, 533)
+position = Vector2(1056, 589)
 scale = Vector2(0.814951, 0.525574)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
+position = Vector2(-0.00012207, -57.0803)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cc87n")
 
 [node name="PlayedIconDisplay" parent="CardPlayArea" instance=ExtResource("2_gki5r")]
+offset_top = -224.516
+offset_right = -47.3445
+offset_bottom = -212.516
+scale = Vector2(3.35188, 6.48151)
 script = ExtResource("3_r1enh")
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
@@ -70,10 +76,6 @@ alignment = 1
 script = ExtResource("2_20mwe")
 
 [node name="CardUi2" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
-layout_mode = 2
-card = SubResource("Resource_75krm")
-
-[node name="CardUi5" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
 layout_mode = 2
 card = SubResource("Resource_75krm")
 

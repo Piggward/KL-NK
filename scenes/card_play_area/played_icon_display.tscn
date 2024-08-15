@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyesjys2df0k0"]
+[gd_scene load_steps=5 format=3 uid="uid://cyesjys2df0k0"]
 
-[ext_resource type="Texture2D" uid="uid://csdocgvkuen27" path="res://Art/Clank!/Boot-Icon.png" id="1_mleyd"]
-[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://Art/SlayTheSpireTutorialArt/tile_0107.png" id="2_748n0"]
+[ext_resource type="Theme" path="res://main_theme.tres" id="1_2fluw"]
+[ext_resource type="Texture2D" uid="uid://yvoh0vxbn3fy" path="res://Art/Clank!/Boot-Icon.png" id="1_mleyd"]
+[ext_resource type="Texture2D" uid="uid://5sxne0ixjc2h" path="res://Art/Clank!/sword-icon.png" id="2_hctes"]
 [ext_resource type="Texture2D" uid="uid://db0j4fsbj5ggb" path="res://Art/Pixel Adventure pack/Free/Other/Transition.png" id="3_1ewf8"]
 
 [node name="PlayedIconDisplay" type="HBoxContainer"]
@@ -11,6 +12,7 @@ offset_top = -218.808
 offset_right = -82.3443
 offset_bottom = -206.808
 scale = Vector2(3.4058, 6.48151)
+theme = ExtResource("1_2fluw")
 
 [node name="Boots" type="Control" parent="."]
 custom_minimum_size = Vector2(20, 12)
@@ -43,10 +45,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -9.19137
-offset_top = -12.1647
-offset_right = 1.80863
-offset_bottom = 10.8353
+offset_left = -9.03518
+offset_top = -9.88675
+offset_right = 5.96482
+offset_bottom = 13.1133
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -75,7 +77,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_748n0")
+texture = ExtResource("2_hctes")
 expand_mode = 5
 
 [node name="amount" type="Label" parent="Swords"]
@@ -86,9 +88,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -11.5
-offset_bottom = 11.5
+offset_left = -8.9586
+offset_top = -9.57818
+offset_right = 6.0414
+offset_bottom = 13.4218
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -128,10 +131,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -10.3539
-offset_top = -11.5776
-offset_right = 0.646072
-offset_bottom = 11.4224
+offset_left = -7.70756
+offset_top = -9.57818
+offset_right = 7.29244
+offset_bottom = 13.4218
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

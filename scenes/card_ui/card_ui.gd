@@ -10,7 +10,6 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var icon_area = $DropPointDetector/IconArea
 
 const CARD_ICON = preload("res://scenes/card_ui/card_symbols/card_icon.tscn")
-const CARD_ICON_NUMBER = preload("res://scenes/card_ui/card_symbols/card_icon_number.tscn")
 
 var parent: Control
 
@@ -47,18 +46,18 @@ func _on_drop_point_detector_area_exited(area):
 
 func initialize_icons(card: Card) -> void:
 	if card.score > 0:
-		var score_icon = CARD_ICON_NUMBER.instantiate()
+		var score_icon = CARD_ICON.instantiate()
 		score_icon.set_icon("score", card.score)
 		score_area.add_child(score_icon)
 	if card.skill > 0:
-		var skill_icon = CARD_ICON_NUMBER.instantiate()
+		var skill_icon = CARD_ICON.instantiate()
 		skill_icon.set_icon("skill", card.skill)
 		icon_area.add_child(skill_icon)
 	for i in card.boots:
-		var boot_icon := CARD_ICON_NUMBER.instantiate()
+		var boot_icon := CARD_ICON.instantiate()
 		boot_icon.set_icon("boot", 0)
 		icon_area.add_child(boot_icon)
 	for i in card.swords:
-		var sword_icon := CARD_ICON_NUMBER.instantiate()
+		var sword_icon := CARD_ICON.instantiate()
 		sword_icon.set_icon("sword", 0)
 		icon_area.add_child(sword_icon)

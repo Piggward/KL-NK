@@ -36,9 +36,8 @@ monitorable = false
 
 [node name="IconArea" type="VBoxContainer" parent="DropPointDetector"]
 offset_top = 11.0
-offset_right = 57.0
+offset_right = 15.0
 offset_bottom = 80.0
-scale = Vector2(0.514755, 0.982607)
 
 [node name="ScoreArea" type="HBoxContainer" parent="DropPointDetector"]
 anchors_preset = 1

@@ -22,7 +22,6 @@ func exit() -> void:
 	pass
 
 func on_input(event: InputEvent) -> void:
-	print(can_release())
 	var mouse_motion := event is InputEventMouseMotion
 	var cancel :=  event.is_action_pressed("right_mouse")
 	var release := event.is_action_pressed("left_mouse") or event.is_action_released("left_mouse")
@@ -45,11 +44,9 @@ func on_gui_input(event: InputEvent) -> void:
 	pass
 
 func can_release() -> bool:
-	print("checking if can release")
 	return card_ui.targets.any(is_releasable_area)
 
 func is_releasable_area(area) -> bool:
-	print(area.name)
 	return area.name == "CardPlayArea"
 
 func on_mouse_entered() -> void:

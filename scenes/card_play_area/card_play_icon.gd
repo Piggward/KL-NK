@@ -4,7 +4,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("hello")
 	texture_rect.texture = texture
 	pass # Replace with function body.
 

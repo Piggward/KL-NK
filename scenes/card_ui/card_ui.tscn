@@ -1,16 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://n2mgpmoqsqb"]
+[gd_scene load_steps=10 format=3 uid="uid://n2mgpmoqsqb"]
 
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_ege2o"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_0hqcf"]
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="2_8loiq"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/base_card_state.gd" id="3_n6cjx"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/clicked_card_state.gd" id="4_ac13j"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/dragging_card_state.gd" id="5_mlwwx"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/released_card_state.gd" id="6_axg88"]
 
+[sub_resource type="Resource" id="Resource_dkvmb"]
+script = ExtResource("2_8loiq")
+skill = 1
+score = 1
+boots = 1
+swords = 1
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12cb"]
 size = Vector2(151, 202)
 
-[node name="CardUi" type="Control"]
+[node name="CardUi" type="Control" groups=["card_ui"]]
 custom_minimum_size = Vector2(80, 100)
 layout_mode = 3
 anchors_preset = 15
@@ -21,9 +29,26 @@ offset_bottom = -548.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ege2o")
+card = SubResource("Resource_dkvmb")
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 monitorable = false
+
+[node name="IconArea" type="VBoxContainer" parent="DropPointDetector"]
+offset_top = 11.0
+offset_right = 57.0
+offset_bottom = 80.0
+scale = Vector2(0.514755, 0.982607)
+
+[node name="ScoreArea" type="HBoxContainer" parent="DropPointDetector"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 59.0
+offset_right = 80.0
+offset_bottom = 21.0
+grow_horizontal = 0
+alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(39, 51)
@@ -48,23 +73,6 @@ state = 2
 [node name="ReleasedCardState" type="Node" parent="CardStateMachine"]
 script = ExtResource("6_axg88")
 state = 3
-
-[node name="IconArea" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 11.0
-offset_right = 57.0
-offset_bottom = 80.0
-scale = Vector2(0.514755, 0.982607)
-
-[node name="ScoreArea" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -21.0
-offset_bottom = 21.0
-grow_horizontal = 0
-alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

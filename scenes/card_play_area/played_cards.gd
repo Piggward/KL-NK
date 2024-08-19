@@ -11,9 +11,7 @@ func add_card(card: Card):
 	cards.add_card(card)
 
 func empty():
-	print(self)
 	for child in get_children():
-		print(child)
 		if child is CardUI:
 			var cardUI := child as CardUI
 			cardUI.queue_free()

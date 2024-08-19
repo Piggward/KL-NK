@@ -13,7 +13,6 @@ func _process(delta):
 
 func _on_gui_input(event):
 	if event.is_action_pressed("left_mouse"):
-		print("end turn clicked")
 		Events.turn_ended.emit()
 	
 	pass # Replace with function body.

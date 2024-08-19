@@ -9,9 +9,6 @@ func enter() -> void:
 	var card_area = card_ui.targets.front()
 	card_area.add_card(card_ui)
 	
-	for card in card_area.get_children():
-		print ("CHiuld")
-	
 	# emit card played event
 	Events.card_played.emit(card_ui.card)
 	

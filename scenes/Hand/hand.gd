@@ -11,9 +11,6 @@ func _ready():
 			cardUI.reparent_requested.connect(on_card_ui_reparent_requested)
 			
 func add_card(card: Card):
-	print("from hand")
-	print(card.name)
-	print(card.skill)
 	var card_UI = CARD_UI.instantiate()
 	add_child(card_UI)
 	card_UI.parent = self

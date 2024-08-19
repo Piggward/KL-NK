@@ -19,7 +19,6 @@ var parent: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("ready!")
 	card_state_machine.init(self)
 	pass # Replace with function body.
 
@@ -37,9 +36,6 @@ func _on_mouse_exited():
 	card_state_machine.on_mouse_exited()
 
 func init():
-	print("from init")
-	print(card.name)
-	print(card.skill)
 	initialize_icons()
 	set_color()
 

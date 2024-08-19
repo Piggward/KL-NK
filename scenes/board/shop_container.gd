@@ -6,6 +6,7 @@ const EXPLORE = preload("res://resources/card_resources/cards/Reserve/explore.tr
 const MERCENARY = preload("res://resources/card_resources/cards/Reserve/mercenary.tres")
 const MYSTERIOUS_TOME = preload("res://resources/card_resources/cards/Reserve/mysterious_tome.tres")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_card(EXPLORE)

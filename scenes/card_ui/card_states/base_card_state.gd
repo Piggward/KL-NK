@@ -15,8 +15,13 @@ func on_input(event: InputEvent) -> void:
 
 func on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
-		card_ui.pivot_offset = card_ui.get_global_mouse_position() - card_ui.global_position
-		transition_requested.emit(self, CardState.State.CLICKED)
+		if (card_ui.get_parent().name == "Hand"):
+			card_ui.pivot_offset = card_ui.get_global_mouse_position() - card_ui.global_position
+			transition_requested.emit(self, CardState.State.CLICKED)
+		elif (card_ui.purchasable and card_ui.get_parent().name == "ShopContainer"):
+			Events.card_purchased.emit(card_ui.card)
+			card_ui.queue_free()
+			
 
 func on_mouse_entered() -> void:
 	pass

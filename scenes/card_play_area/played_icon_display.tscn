@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyesjys2df0k0"]
 
 [ext_resource type="Theme" path="res://main_theme.tres" id="1_2fluw"]
-[ext_resource type="Texture2D" uid="uid://yvoh0vxbn3fy" path="res://Art/Clank!/Boot-Icon.png" id="1_mleyd"]
+[ext_resource type="Texture2D" uid="uid://yvoh0vxbn3fy" path="res://Art/Clank!/boot-icon.png" id="1_mleyd"]
 [ext_resource type="Texture2D" uid="uid://5sxne0ixjc2h" path="res://Art/Clank!/sword-icon.png" id="2_hctes"]
 [ext_resource type="Texture2D" uid="uid://db0j4fsbj5ggb" path="res://Art/Pixel Adventure pack/Free/Other/Transition.png" id="3_1ewf8"]
 
 [node name="PlayedIconDisplay" type="HBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
-offset_left = -115.344
-offset_top = -218.808
-offset_right = -82.3443
-offset_bottom = -206.808
+offset_left = -115.0
+offset_top = -222.0
+offset_right = -40.0
+offset_bottom = -210.0
 scale = Vector2(3.4058, 6.48151)
 theme = ExtResource("1_2fluw")
 

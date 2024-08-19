@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cxlgayeshuqav"]
+
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="1_0xsag"]
+
+[resource]
+script = ExtResource("1_0xsag")
+skill = 1
+score = 0
+boots = 0
+swords = 0
+cost = 0
+type = 1
+name = "Burgle"

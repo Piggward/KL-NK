@@ -5,6 +5,7 @@ const SWORD_ICON = preload("res://Art/Clank!/sword-icon.png")
 const SKILL_ICON = preload("res://Art/Clank!/skill-icon.png")
 const SCORE_ICON = preload("res://Art/Clank!/score-icon.png")
 const BOOT_ICON = preload("res://Art/Clank!/boot-icon.png")
+const COST_ICON = preload("res://Art/Clank!/cost-icon.png")
 
 func set_icon(icon: String, number: int) -> void:
 	var shape = get_node("Shape")
@@ -15,6 +16,7 @@ func set_icon(icon: String, number: int) -> void:
 			shape.texture = SKILL_ICON 
 		"score":
 			amount.text = str(number)
+			amount.add_theme_color_override("font_color", Color.WHITE)
 			shape.texture = SCORE_ICON
 		"sword":
 			self.remove_child(amount)
@@ -22,6 +24,11 @@ func set_icon(icon: String, number: int) -> void:
 		"boot":
 			self.remove_child(amount)
 			shape.texture = BOOT_ICON
+		"cost":
+			amount.text = str(number)
+			amount.global_position += Vector2(4, 4)
+			amount.add_theme_color_override("font_color", Color.WHITE)
+			shape.texture = COST_ICON
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,9 +38,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_gui_input(event):
-	#looking for a better way to do this
-	get_parent().get_parent().get_parent()._on_gui_input(event)
-	pass # Replace with function body.

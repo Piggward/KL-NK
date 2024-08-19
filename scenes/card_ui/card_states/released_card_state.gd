@@ -7,7 +7,10 @@ var minimum_drag_time_elapsed := false
 func enter() -> void:
 	# set position
 	var card_area = card_ui.targets.front()
-	card_ui.global_position = card_area.global_position - card_ui.size / 2
+	card_area.add_card(card_ui)
+	
+	for card in card_area.get_children():
+		print ("CHiuld")
 	
 	# emit card played event
 	Events.card_played.emit(card_ui.card)

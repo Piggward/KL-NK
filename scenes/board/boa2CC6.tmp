@@ -1,28 +1,51 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=17 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
 [ext_resource type="PackedScene" uid="uid://cyesjys2df0k0" path="res://scenes/card_play_area/played_icon_display.tscn" id="2_gki5r"]
+[ext_resource type="PackedScene" uid="uid://n2mgpmoqsqb" path="res://scenes/card_ui/card_ui.tscn" id="2_ild30"]
 [ext_resource type="Script" path="res://scenes/card_play_area/played_icon_display.gd" id="3_r1enh"]
-[ext_resource type="Script" path="res://scenes/card_play_area/played_cards.gd" id="4_s2pir"]
-[ext_resource type="Script" path="res://scenes/board/card_played_area.gd" id="5_dbav2"]
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="4_bjukt"]
 [ext_resource type="Script" path="res://scenes/TurnManager/turn_manager.gd" id="8_1e80b"]
-[ext_resource type="Script" path="res://scenes/board/shop_container.gd" id="9_tw2uv"]
+[ext_resource type="Resource" uid="uid://b4mmudg6kamey" path="res://resources/card_resources/cards/Reserve/explore.tres" id="8_torny"]
+[ext_resource type="Resource" uid="uid://dp2qmbuufdwq0" path="res://resources/card_resources/cards/Reserve/mercenary.tres" id="9_qib01"]
+[ext_resource type="Resource" uid="uid://b6s8y6cjcplh1" path="res://resources/card_resources/cards/Reserve/mysterious_tome.tres" id="10_dley6"]
 [ext_resource type="Script" path="res://scenes/Player/Player.gd" id="11_fhfhh"]
-[ext_resource type="Resource" uid="uid://5hi0ubtp6two" path="res://resources/card_resources/starting_deck.tres" id="13_2yrrp"]
-[ext_resource type="Script" path="res://scenes/board/end_turn_button.gd" id="14_hhj5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
-size = Vector2(230.273, 222.436)
+size = Vector2(232, 334.872)
+
+[sub_resource type="Resource" id="Resource_75krm"]
+script = ExtResource("4_bjukt")
+skill = 2
+score = 3
+boots = 1
+swords = 2
+cost = 2
+type = 1
+
+[sub_resource type="Resource" id="Resource_2uyk3"]
+script = ExtResource("4_bjukt")
+skill = 0
+score = 5
+boots = 2
+swords = 1
+cost = 1
+type = 1
+
+[sub_resource type="Resource" id="Resource_lfqpb"]
+script = ExtResource("4_bjukt")
+skill = 1
+score = 0
+boots = 0
+swords = 2
+cost = 1
+type = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdai0"]
 size = Vector2(189, 221)
 
 [node name="BoardView" type="Node2D"]
-
-[node name="Player" type="Node" parent="."]
-script = ExtResource("11_fhfhh")
-deck = ExtResource("13_2yrrp")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.431373, 0.392157, 0.352941, 1)
@@ -33,39 +56,21 @@ texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
 [node name="CardPlayArea" type="Area2D" parent="." groups=["card_play_area"]]
-position = Vector2(1036, 534)
+position = Vector2(1054, 560)
+scale = Vector2(0.814951, 0.525574)
 collision_mask = 2
-script = ExtResource("5_dbav2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
+position = Vector2(2.45401, 1.14441e-05)
 shape = SubResource("RectangleShape2D_cc87n")
 
 [node name="PlayedIconDisplay" parent="CardPlayArea" instance=ExtResource("2_gki5r")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -114.0
-offset_top = -111.0
-offset_right = -46.0
-offset_bottom = -99.0
-grow_horizontal = 2
+offset_left = -111.663
+offset_top = -163.631
+offset_right = -43.6632
+offset_bottom = -151.631
 scale = Vector2(3.11565, 6.10098)
 script = ExtResource("3_r1enh")
-
-[node name="PlayedCards" type="HBoxContainer" parent="CardPlayArea"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -115.0
-offset_top = 1.0
-offset_right = 116.0
-offset_bottom = 111.0
-grow_horizontal = 0
-grow_vertical = 0
-alignment = 1
-script = ExtResource("4_s2pir")
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -82,6 +87,21 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_20mwe")
+
+[node name="CardUi2" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = SubResource("Resource_75krm")
+
+[node name="CardUi3" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = SubResource("Resource_2uyk3")
+
+[node name="CardUi4" parent="BoardUI/Hand" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = SubResource("Resource_lfqpb")
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource("8_1e80b")
 
 [node name="Shop" type="Area2D" parent="."]
 position = Vector2(985, 259)
@@ -103,41 +123,18 @@ offset_bottom = 77.0
 grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
-script = ExtResource("9_tw2uv")
 
-[node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("activePlayer")]
-script = ExtResource("8_1e80b")
-activePlayer = NodePath("../Player")
+[node name="CardUi2" parent="Shop/ShopContainer" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = ExtResource("8_torny")
 
-[node name="EndTurnButton" type="Control" parent="."]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 758.0
-offset_top = 489.0
-offset_right = 798.0
-offset_bottom = 529.0
-script = ExtResource("14_hhj5e")
+[node name="CardUi3" parent="Shop/ShopContainer" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = ExtResource("9_qib01")
 
-[node name="ColorRect" type="ColorRect" parent="EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.709804, 0.576471, 0.415686, 1)
+[node name="CardUi4" parent="Shop/ShopContainer" instance=ExtResource("2_ild30")]
+layout_mode = 2
+card = ExtResource("10_dley6")
 
-[node name="Label" type="Label" parent="EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "End Turn"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="gui_input" from="EndTurnButton" to="EndTurnButton" method="_on_gui_input"]
+[node name="Player" type="Node" parent="."]
+script = ExtResource("11_fhfhh")

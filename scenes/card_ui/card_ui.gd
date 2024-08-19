@@ -8,6 +8,10 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var targets: Array[Node] = []
 @onready var score_area = $DropPointDetector/ScoreArea
 @onready var icon_area = $DropPointDetector/IconArea
+@onready var cost_area = $DropPointDetector/CostArea
+@onready var color_rect = $ColorRect
+@onready var purchasable = false
+@onready var removeable = false
 
 const CARD_ICON = preload("res://scenes/card_ui/card_symbols/card_icon.tscn")
 
@@ -15,8 +19,8 @@ var parent: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("ready!")
 	card_state_machine.init(self)
-	initialize_icons(card)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +36,12 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	card_state_machine.on_mouse_exited()
 
+func init():
+	print("from init")
+	print(card.name)
+	print(card.skill)
+	initialize_icons()
+	set_color()
 
 func _on_gui_input(event) -> void:
 	card_state_machine.on_gui_input(event)
@@ -44,20 +54,35 @@ func _on_drop_point_detector_area_entered(area):
 func _on_drop_point_detector_area_exited(area):
 	targets.erase(area)
 
-func initialize_icons(card: Card) -> void:
-	if card.score > 0:
-		var score_icon = CARD_ICON.instantiate()
-		score_icon.set_icon("score", card.score)
-		score_area.add_child(score_icon)
-	if card.skill > 0:
-		var skill_icon = CARD_ICON.instantiate()
-		skill_icon.set_icon("skill", card.skill)
-		icon_area.add_child(skill_icon)
-	for i in card.boots:
-		var boot_icon := CARD_ICON.instantiate()
-		boot_icon.set_icon("boot", 0)
-		icon_area.add_child(boot_icon)
-	for i in card.swords:
-		var sword_icon := CARD_ICON.instantiate()
-		sword_icon.set_icon("sword", 0)
-		icon_area.add_child(sword_icon)
+func initialize_icons() -> void:
+	initialize_number_icon("cost", card.cost, cost_area)
+	initialize_number_icon("score", card.score, score_area)
+	initialize_number_icon("skill", card.skill, icon_area)
+	initialize_icon("boot", card.boots, icon_area)
+	initialize_icon("sword", card.swords, icon_area)
+	
+		
+func initialize_number_icon(name, amount, area) -> void:
+	if amount > 0:
+		var icon = CARD_ICON.instantiate()
+		icon.set_icon(name, amount)
+		area.add_child(icon)
+
+func initialize_icon(name, amount, area) -> void:
+	for i in amount:
+		var icon := CARD_ICON.instantiate()
+		icon.set_icon(name, 0)
+		area.add_child(icon)
+
+func set_color():
+	match card.type:
+		Card.Type.RESERVE:
+			color_rect.color = Color.DARK_GOLDENROD
+		Card.Type.MONSTER:
+			color_rect.color = Color.RED
+		Card.Type.STARTING:
+			color_rect.color = Color.GRAY
+		Card.Type.EVENT:
+			color_rect.color = Color.PURPLE
+		Card.Type.DUNGEON:
+			color_rect.color = Color.BLUE

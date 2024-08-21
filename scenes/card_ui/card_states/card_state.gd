@@ -29,3 +29,7 @@ func on_mouse_entered() -> void:
 
 func on_mouse_exited() -> void:
 	pass # Replace with function body.
+	
+
+func on_drop_point_detector_area_entered(area: Area2D) -> void:
+	pass

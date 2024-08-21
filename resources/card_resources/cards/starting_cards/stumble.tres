@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://c5nm2pn8ad0q4"]
+
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="1_gibkx"]
+
+[resource]
+script = ExtResource("1_gibkx")
+skill = 0
+score = 0
+boots = 0
+swords = 0
+cost = 0
+type = 1
+name = "Stumble"

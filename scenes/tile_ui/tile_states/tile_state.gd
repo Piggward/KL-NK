@@ -1,7 +1,7 @@
 class_name TileState
 extends Node
 
-enum State { IDLE, FOCUSED, SELECTED }
+enum State { IDLE, FOCUSED, SELECTED, AVAILABLE }
 
 signal transition_requested(from: TileState, to: State)
 

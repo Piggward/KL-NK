@@ -59,26 +59,22 @@ offset_right = -641.0
 offset_bottom = -191.0
 grow_horizontal = 0
 
-[node name="Road" parent="." node_paths=PackedStringArray("startTile", "endTile") instance=ExtResource("2_doaci")]
-startTile = NodePath("../TileUI")
-endTile = NodePath("../TileUI2")
-twoWay = false
+[node name="Road" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
+start_tile = NodePath("../TileUI")
+end_tile = NodePath("../TileUI2")
 
-[node name="Road2" parent="." node_paths=PackedStringArray("startTile", "endTile") instance=ExtResource("2_doaci")]
-startTile = NodePath("../TileUI2")
-endTile = NodePath("../TileUI4")
+[node name="Road2" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
+start_tile = NodePath("../TileUI2")
+end_tile = NodePath("../TileUI3")
 
-[node name="Road3" parent="." node_paths=PackedStringArray("startTile", "endTile") instance=ExtResource("2_doaci")]
-startTile = NodePath("../TileUI2")
-endTile = NodePath("../TileUI3")
-twoWay = false
+[node name="Road3" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
+start_tile = NodePath("../TileUI2")
+end_tile = NodePath("../TileUI4")
 
-[node name="Road4" parent="." node_paths=PackedStringArray("startTile", "endTile") instance=ExtResource("2_doaci")]
-startTile = NodePath("../TileUI3")
-endTile = NodePath("../TileUI4")
-twoWay = false
+[node name="Road4" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
+start_tile = NodePath("../TileUI3")
+end_tile = NodePath("../TileUI4")
 
-[node name="Road5" parent="." node_paths=PackedStringArray("startTile", "endTile") instance=ExtResource("2_doaci")]
-startTile = NodePath("../TileUI4")
-endTile = NodePath("../TileUI")
-twoWay = false
+[node name="Road5" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
+start_tile = NodePath("../TileUI4")
+end_tile = NodePath("../TileUI")

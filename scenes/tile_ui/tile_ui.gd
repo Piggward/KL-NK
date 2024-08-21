@@ -29,8 +29,8 @@ func available_neighbouring_tiles(stamina: int = 1) -> Array: # TileUI[]
 		
 		var tile_state = tile.tile_state_machine.current_state
 		tile_state.transition_requested.emit(tile_state, TileState.State.FOCUSED)	
-		print(tile_state_machine.current_state)
+		#print(tile_state_machine.current_state)
 		tiles.append(tile)
-		print("%s leads to %s" % [road.name, tile.name])
+		#print("%s leads to %s" % [road.name, tile.name])
 	return tiles
 

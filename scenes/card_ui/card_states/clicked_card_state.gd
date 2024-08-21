@@ -1,18 +1,17 @@
 extends CardState
 
 func enter() -> void:
-	card_ui.color.color = Color.REBECCA_PURPLE
-	card_ui.state.text ="CLICKED"
+	card_ui.drop_point_detector.monitoring = true
 
 func exit() -> void:
 	pass
 
-func on_input(_event: InputEvent) -> void:
+func on_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		transition_requested.emit(self, CardState.State.DRAGGING)
 	pass
 
 func on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		transition_requested.emit(self, CardState.State.DRAGGING)
 	pass
 
 

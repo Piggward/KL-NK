@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DeckPile" load_steps=6 format=3 uid="uid://5hi0ubtp6two"]
+
+[ext_resource type="Resource" uid="uid://cxlgayeshuqav" path="res://resources/card_resources/cards/starting_cards/burgle.tres" id="1_gxx05"]
+[ext_resource type="Resource" uid="uid://yoq24fhwlnbc" path="res://resources/card_resources/cards/starting_cards/side_step.tres" id="2_1saix"]
+[ext_resource type="Resource" uid="uid://bautq2w6npogj" path="res://resources/card_resources/cards/starting_cards/scramble.tres" id="3_m2u3a"]
+[ext_resource type="Resource" uid="uid://c5nm2pn8ad0q4" path="res://resources/card_resources/cards/starting_cards/stumble.tres" id="4_b4w2d"]
+[ext_resource type="Script" path="res://resources/card_resources/deck_pile.gd" id="5_u7tf0"]
+
+[resource]
+script = ExtResource("5_u7tf0")
+cards = Array[Resource("res://resources/card_resources/card.gd")]([ExtResource("1_gxx05"), ExtResource("1_gxx05"), ExtResource("1_gxx05"), ExtResource("1_gxx05"), ExtResource("1_gxx05"), ExtResource("1_gxx05"), ExtResource("2_1saix"), ExtResource("3_m2u3a"), ExtResource("4_b4w2d"), ExtResource("4_b4w2d")])

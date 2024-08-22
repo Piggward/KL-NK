@@ -4,7 +4,7 @@ extends Node
 @export var initial_state: TileState
 
 var current_state: TileState
-var states:= {}
+var states := {}
 
 func init(tile: TileUI) -> void:
 	Events.tiles_reset_all.connect(_on_reset)
@@ -32,7 +32,6 @@ func on_mouse_exited() -> void:
 		
 func _on_reset(sender: TileState) -> void:
 	if current_state == sender:
-		print(current_state, sender, "was the same!")
 		return
 		
 	if current_state:

@@ -24,11 +24,11 @@ func _ready():
 	Events.turn_ended.connect(_on_turn_ended)
 	activePlayer.deck.shuffle()
 	start_turn()
-	pass # Replace with function body.
 
 func start_turn():
+	print("*", MapController.players)
 	for i in 5:
-		if(activePlayer.deck.cards.size() == 0):
+		if (activePlayer.deck.cards.size() == 0):
 			activePlayer.deck = activePlayer.discard_pile
 			activePlayer.discard_pile.empty()
 			activePlayer.deck.shuffle()
@@ -76,9 +76,3 @@ func update_shop():
 		if child is CardUI:
 			var cardUI := child as CardUI
 			cardUI.purchasable = cardUI.card.cost <= currentSkill
-			
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

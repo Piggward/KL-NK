@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://chpg5hhen7b3p"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://oa1w15bcpcdf"]
 
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_nmkrf"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Art/SlayTheSpireTutorialArt/pixel_rpg.ttf" id="1_nmkrf"]
 
 [resource]
 default_font = ExtResource("1_nmkrf")

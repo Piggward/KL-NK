@@ -12,7 +12,6 @@ func _ready():
 	add_card(EXPLORE)
 	add_card(MERCENARY)
 	add_card(MYSTERIOUS_TOME)
-	pass # Replace with function body.
 
 func add_card(card: Card):
 	var card_UI = CARD_UI.instantiate()
@@ -20,7 +19,3 @@ func add_card(card: Card):
 	card_UI.parent = self
 	card_UI.card = card
 	card_UI.init()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ka8ncedrcat"]
+[gd_scene load_steps=4 format=3 uid="uid://tq7ye5cjssut"]
 
 [ext_resource type="PackedScene" uid="uid://dvpocbbp35hdk" path="res://scenes/tile_ui/tile_ui.tscn" id="1_1hb4b"]
+[ext_resource type="Script" path="res://scenes/maps_ui/maps_ui.gd" id="1_qx25b"]
 [ext_resource type="PackedScene" uid="uid://co7k208jay22f" path="res://scenes/road/road.tscn" id="2_doaci"]
 
 [node name="MapsUi" type="Control"]
@@ -10,8 +11,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_qx25b")
 
-[node name="TileUI" parent="." instance=ExtResource("1_1hb4b")]
+[node name="StartTile" parent="." instance=ExtResource("1_1hb4b")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -60,7 +63,7 @@ offset_bottom = -191.0
 grow_horizontal = 0
 
 [node name="Road" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
-start_tile = NodePath("../TileUI")
+start_tile = NodePath("../StartTile")
 end_tile = NodePath("../TileUI2")
 
 [node name="Road2" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
@@ -77,4 +80,4 @@ end_tile = NodePath("../TileUI4")
 
 [node name="Road5" parent="." node_paths=PackedStringArray("start_tile", "end_tile") instance=ExtResource("2_doaci")]
 start_tile = NodePath("../TileUI4")
-end_tile = NodePath("../TileUI")
+end_tile = NodePath("../StartTile")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cnh1sk28bw35d"]
+
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="1_42y0m"]
+
+[resource]
+script = ExtResource("1_42y0m")
+skill = 0
+score = 0
+boots = 0
+swords = 0
+cost = 2
+type = 0
+name = "Goblin"
+effect = "DEFEAT: +1 GOLD"

@@ -115,10 +115,10 @@ activePlayer = NodePath("../Player")
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 758.0
-offset_top = 489.0
-offset_right = 798.0
-offset_bottom = 529.0
+offset_left = 820.0
+offset_top = 605.0
+offset_right = 920.0
+offset_bottom = 645.0
 script = ExtResource("14_hhj5e")
 
 [node name="ColorRect" type="ColorRect" parent="EndTurnButton"]

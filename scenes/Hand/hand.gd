@@ -15,6 +15,7 @@ func add_card(card: Card):
 	add_child(card_UI)
 	card_UI.parent = self
 	card_UI.card = card
+	card_UI.reparent_requested.connect(on_card_ui_reparent_requested)
 	card_UI.init()
 
 func on_card_ui_reparent_requested(child: CardUI) -> void:

@@ -20,7 +20,7 @@ func on_gui_input(event: InputEvent) -> void:
 			transition_requested.emit(self, CardState.State.CLICKED)
 		elif (card_ui.purchasable and card_ui.get_parent().name == "ShopContainer"):
 			Events.card_purchased.emit(card_ui.card)
-			if card_ui.card.type != Card.Type.RESERVE:
+			if card_ui.card.type != Card.Type.RESERVE and card_ui.card.name != "Goblin":
 				card_ui.queue_free()
 			
 

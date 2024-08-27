@@ -36,6 +36,7 @@ func start_turn():
 		hand.add_card(card)
 
 func _on_card_played(card: Card) -> void:
+	print("card played: ", card.name)
 	played_cards.add_card(card)
 	currentBoots += card.boots
 	currentSkill += card.skill
@@ -51,14 +52,24 @@ func _on_card_removed(card: Card) -> void:
 	pass
 
 func _on_card_purchased(card: Card):
-	if currentSkill < card.cost:
+	if card.type == Card.Type.MONSTER:
+		print("monster defeated: ", card.name);
+		currentSwords -= card.cost
 		return
-	currentSkill -= card.cost
-	update_shop()
-	activePlayer.discard_pile.add_card(card)
+	
+	if card.type == Card.Type.DUNGEON or card.type == Card.Type.RESERVE:
+		print("card purchased: ", card.name)
+		if currentSkill < card.cost:
+			return
+		currentSkill -= card.cost
+		update_shop()
+		activePlayer.discard_pile.add_card(card)
 
 func _on_turn_ended():
-	for card in played_cards.cards.cards:
+	if hand.get_children().size() > 0:
+		print("hand not empty")
+		return
+	for card in played_cards.cards:
 		activePlayer.discard_pile.add_card(card)
 		
 	played_cards.empty()
@@ -75,7 +86,10 @@ func update_shop():
 	for child in shop_container.get_children():
 		if child is CardUI:
 			var cardUI := child as CardUI
-			cardUI.purchasable = cardUI.card.cost <= currentSkill
+			if cardUI.card.type == Card.Type.MONSTER:
+				cardUI.purchasable = cardUI.card.cost <= currentSwords
+			else:
+				cardUI.purchasable = cardUI.card.cost <= currentSkill
 			
 
 

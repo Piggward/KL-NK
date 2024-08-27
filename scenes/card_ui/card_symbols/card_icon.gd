@@ -29,6 +29,7 @@ func set_icon(icon: String, number: int) -> void:
 			amount.global_position += Vector2(4, 4)
 			amount.add_theme_color_override("font_color", Color.WHITE)
 			shape.texture = COST_ICON
+			
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

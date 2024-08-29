@@ -5,6 +5,9 @@ extends HBoxContainer
 @onready var skills_display = $Skills/amount
 @onready var turn_manager = $"../../TurnManager"
 
+func _update_icons(boots, swords, skills):
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	boots_display.text = str(turn_manager.currentBoots)

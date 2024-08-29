@@ -10,21 +10,13 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	tile_state_machine.on_gui_input(event)
-	
-#func _on_mouse_entered() -> void:
-	#tile_state_machine.on_mouse_entered()
-	#
-#func _on_mouse_exited() -> void:
-	#tile_state_machine.on_mouse_exited()
 
 func _on_click_area_mouse_entered():
 	pass # Replace with function body.
 	
 func update_available_neighbouring_tiles(stamina: int = 1) -> Array: # TileUI[]
-	# Reset all tiles TODO: make this prettier! Maybe a queue-based input system (not related to this lol but still)
-	for tile in get_tree().get_nodes_in_group("tiles"):
-		var state = tile.tile_state_machine.current_state
-		state.transition_requested.emit(state, TileState.State.IDLE)
+	# Reset all tiles
+	Events.tiles_reset_all.emit(tile_state_machine.current_state)
 
 	var tiles = []
 	for road in exit_roads:

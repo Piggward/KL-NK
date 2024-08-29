@@ -20,6 +20,5 @@ func move_player_to_tile(player: Player, tile: TileUI) -> void:
 	var new_pos = tile.global_position
 	# Center player within tile
 	var tileSize = tile.get_node("ClickArea/CollisionShape2D").get_shape().get_size()
-	#var centerOffset = Vector2(tileRect.dime)
 	new_pos += Vector2(tileSize.x / 2, tileSize.y / 2)
 	player.position = new_pos

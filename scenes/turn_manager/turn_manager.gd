@@ -26,7 +26,14 @@ func _ready():
 	start_turn()
 
 func start_turn():
-	print("*", MapController.players)
+	#if activePlayer.discard_pile.empty():
+		#activePlayer.deck.shuffle()
+	# Focus tile that player is currently standing on
+	# TODO: maybe as a helper in MapController?
+	var tileNodeID = MapController.players[activePlayer.get_instance_id()].pos
+	var tileState = instance_from_id(tileNodeID).tile_state_machine.current_state
+	tileState.transition_requested.emit(tileState, TileState.State.SELECTED)
+
 	for i in 5:
 		if (activePlayer.deck.cards.size() == 0):
 			activePlayer.deck = activePlayer.discard_pile
@@ -64,7 +71,6 @@ func _on_turn_ended():
 	played_cards.empty()
 	reset_values()
 	start_turn()
-	
 
 func reset_values():
 	currentBoots = 0
@@ -76,3 +82,9 @@ func update_shop():
 		if child is CardUI:
 			var cardUI := child as CardUI
 			cardUI.purchasable = cardUI.card.cost <= currentSkill
+
+func set_active_player(player: Player):
+	activePlayer = player
+	start_turn()
+	# update_icons(currentBoots, currentSwords, currentSkill)
+	# pass

@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://db3mfgpfkjfbn" path="res://scenes/player/player.tscn" id="3_vis25"]
 [ext_resource type="Script" path="res://scenes/card_play_area/played_cards.gd" id="4_s2pir"]
 [ext_resource type="Script" path="res://scenes/board/card_played_area.gd" id="5_dbav2"]
-[ext_resource type="Script" path="res://scenes/TurnManager/turn_manager.gd" id="8_1e80b"]
 [ext_resource type="PackedScene" uid="uid://tq7ye5cjssut" path="res://scenes/maps_ui/maps_ui.tscn" id="9_am3la"]
 [ext_resource type="Script" path="res://scenes/board/shop_container.gd" id="9_tw2uv"]
 [ext_resource type="Script" path="res://scenes/board/Shop.gd" id="9_vvd6u"]
 [ext_resource type="Resource" uid="uid://5hi0ubtp6two" path="res://resources/card_resources/starting_deck.tres" id="13_2yrrp"]
+[ext_resource type="Script" path="res://scenes/turn_manager/turn_manager.gd" id="13_t75d6"]
 [ext_resource type="Script" path="res://scenes/board/end_turn_button.gd" id="14_hhj5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
@@ -142,7 +142,7 @@ alignment = 1
 script = ExtResource("9_tw2uv")
 
 [node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("activePlayer")]
-script = ExtResource("8_1e80b")
+script = ExtResource("13_t75d6")
 activePlayer = NodePath("../BoardUI/Player1")
 
 [connection signal="gui_input" from="BoardUI/EndTurnButton" to="BoardUI/EndTurnButton" method="_on_gui_input"]

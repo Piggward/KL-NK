@@ -15,6 +15,10 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var card_color = $CardColor
 @onready var display_name = $DisplayName
 @onready var display_effect = $DisplayEffect
+@onready var glow_panel = $GlowPanel
+const BLUE_STYLE = preload("res://scenes/card_ui/styles/blue_style.tres")
+const GOLDEN_STYLE = preload("res://scenes/card_ui/styles/golden_style.tres")
+const EMPTY_STYLE = preload("res://scenes/card_ui/styles/empty_style.tres")
 
 const CARD_ICON = preload("res://scenes/card_ui/card_symbols/card_icon.tscn")
 
@@ -91,3 +95,10 @@ func set_color():
 			card_color.color = Color.PURPLE
 		Card.Type.DUNGEON:
 			card_color.color = Color.BLUE
+			
+func set_purchasable(value):
+	purchasable = value;
+	if purchasable:
+		glow_panel.set("theme_override_styles/panel", GOLDEN_STYLE)
+	else:
+		glow_panel.set("theme_override_styles/panel", EMPTY_STYLE)

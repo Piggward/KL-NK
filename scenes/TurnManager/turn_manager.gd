@@ -5,7 +5,7 @@ const CARD_UI = preload("res://scenes/card_ui/card_ui.tscn")
 
 signal update_icons(boots: int, swords: int, skills: int)
 
-@onready var shop_container = $"../Shop/ShopContainer"
+@onready var reserve = $"../Shop/Reserve"
 @onready var played_cards = $"../CardPlayArea/PlayedCards"
 @onready var hand = $"../BoardUI/Hand"
 
@@ -83,13 +83,13 @@ func reset_values():
 	currentSwords = 0
 
 func update_shop():
-	for child in shop_container.get_children():
+	for child in reserve.get_children():
 		if child is CardUI:
 			var cardUI := child as CardUI
 			if cardUI.card.type == Card.Type.MONSTER:
-				cardUI.purchasable = cardUI.card.cost <= currentSwords
+				cardUI.set_purchasable(cardUI.card.cost <= currentSwords)
 			else:
-				cardUI.purchasable = cardUI.card.cost <= currentSkill
+				cardUI.set_purchasable(cardUI.card.cost <= currentSkill)
 			
 
 

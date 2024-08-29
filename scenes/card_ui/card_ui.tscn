@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://n2mgpmoqsqb"]
+[gd_scene load_steps=12 format=3 uid="uid://n2mgpmoqsqb"]
 
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_ege2o"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_0hqcf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/dragging_card_state.gd" id="5_mlwwx"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/released_card_state.gd" id="6_axg88"]
 [ext_resource type="Theme" path="res://main_theme.tres" id="8_ggq8a"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/reserve_card_state.gd" id="8_jrhae"]
 
 [sub_resource type="Resource" id="Resource_dkvmb"]
 script = ExtResource("2_8loiq")
@@ -26,46 +27,57 @@ size = Vector2(150.348, 204.838)
 [node name="CardUi" type="Control" groups=["card_ui"]]
 custom_minimum_size = Vector2(80, 110)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1072.0
-offset_bottom = -548.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 110.0
 script = ExtResource("1_ege2o")
 card = SubResource("Resource_dkvmb")
 
+[node name="GlowPanel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 81.0
+offset_bottom = 111.0
+mouse_filter = 2
+
 [node name="CardBackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 24.0
+offset_top = -92.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_filter = 2
 color = Color(0.401634, 0.503843, 0.321135, 1)
+
+[node name="CardColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 18.0
+mouse_filter = 2
 
 [node name="ScoreArea" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -21.2227
-offset_right = -0.222725
-offset_bottom = 21.0
+offset_left = -19.0
+offset_bottom = 18.0
 grow_horizontal = 0
 alignment = 1
 
 [node name="DropPointDetector" type="Area2D" parent="."]
-scale = Vector2(0.996225, 1.08645)
+position = Vector2(5.96046e-08, 5.96046e-08)
+scale = Vector2(0.997881, 1.09817)
 monitorable = false
 
 [node name="IconArea" type="VBoxContainer" parent="DropPointDetector"]
-offset_top = 22.0
-offset_right = 15.0
-offset_bottom = 100.0
+offset_top = 20.0333
+offset_right = 16.0
+offset_bottom = 100.033
 
 [node name="CostArea" type="HBoxContainer" parent="DropPointDetector"]
 anchors_preset = 1
@@ -102,17 +114,14 @@ state = 2
 script = ExtResource("6_axg88")
 state = 3
 
-[node name="CardColor" type="ColorRect" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 24.0
-mouse_filter = 2
+[node name="ReserveCardState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_jrhae")
+state = 4
 
 [node name="DisplayName" type="Label" parent="."]
 layout_mode = 0
 offset_right = 80.0
-offset_bottom = 24.0
+offset_bottom = 18.0
 theme_override_font_sizes/font_size = 11
 horizontal_alignment = 1
 vertical_alignment = 1

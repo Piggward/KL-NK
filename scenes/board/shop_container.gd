@@ -1,5 +1,7 @@
 class_name ShopContainer
 extends HBoxContainer
+@onready var reserve_card_state = $CardStateMachine/ReserveCardState
+@onready var card_state_machine = $CardStateMachine
 
 const CARD_UI = preload("res://scenes/card_ui/card_ui.tscn")
 const EXPLORE = preload("res://resources/card_resources/cards/Reserve/explore.tres")

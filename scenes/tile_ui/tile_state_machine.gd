@@ -4,9 +4,10 @@ extends Node
 @export var initial_state: TileState
 
 var current_state: TileState
-var states:= {}
+var states := {}
 
 func init(tile: TileUI) -> void:
+	Events.tiles_reset_all.connect(_on_reset)
 	for child in get_children():
 		if child is TileState:
 			states[child.state] = child
@@ -28,6 +29,17 @@ func on_mouse_entered() -> void:
 func on_mouse_exited() -> void:
 	if current_state:
 		current_state.on_mouse_exited()
+		
+func _on_reset(sender: TileState) -> void:
+	if current_state == sender:
+		return
+		
+	if current_state:
+		current_state.exit()
+	
+	var new_state = states[TileState.State.IDLE]
+	new_state.enter()
+	current_state = new_state
 		
 func _on_transition_requested(from: TileState, to: TileState.State) -> void:
 	if from != current_state:

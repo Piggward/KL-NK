@@ -1,7 +1,7 @@
 class_name CardUI
 extends Control
 
-@export var card : Card
+@export var card: Card
 signal reparent_requested(which_card_ui: CardUI)
 @onready var card_state_machine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
@@ -20,11 +20,6 @@ var parent: Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_state_machine.init(self)
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func _input(event: InputEvent) -> void:
 	card_state_machine.on_input(event)

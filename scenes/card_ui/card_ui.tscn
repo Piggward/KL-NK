@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://n2mgpmoqsqb"]
+[gd_scene load_steps=10 format=3 uid="uid://n2mgpmoqsqb"]
 
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_ege2o"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_0hqcf"]
 [ext_resource type="Script" path="res://resources/card_resources/card.gd" id="2_8loiq"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/base_card_state.gd" id="3_n6cjx"]
-[ext_resource type="Script" path="res://scenes/card_ui/card_states/clicked_card_state.gd" id="4_ac13j"]
-[ext_resource type="Script" path="res://scenes/card_ui/card_states/dragging_card_state.gd" id="5_mlwwx"]
-[ext_resource type="Script" path="res://scenes/card_ui/card_states/released_card_state.gd" id="6_axg88"]
-[ext_resource type="Theme" path="res://main_theme.tres" id="8_ggq8a"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/played_card_state.gd" id="6_qqu2g"]
+[ext_resource type="Theme" uid="uid://chpg5hhen7b3p" path="res://main_theme.tres" id="8_ggq8a"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/reserve_card_state.gd" id="8_jrhae"]
 
 [sub_resource type="Resource" id="Resource_dkvmb"]
@@ -102,21 +100,13 @@ initial_state = NodePath("BaseCardState")
 [node name="BaseCardState" type="Node" parent="CardStateMachine"]
 script = ExtResource("3_n6cjx")
 
-[node name="ClickedCardState" type="Node" parent="CardStateMachine"]
-script = ExtResource("4_ac13j")
-state = 1
-
-[node name="DraggingCardState" type="Node" parent="CardStateMachine"]
-script = ExtResource("5_mlwwx")
-state = 2
-
-[node name="ReleasedCardState" type="Node" parent="CardStateMachine"]
-script = ExtResource("6_axg88")
-state = 3
-
 [node name="ReserveCardState" type="Node" parent="CardStateMachine"]
 script = ExtResource("8_jrhae")
 state = 4
+
+[node name="PlayedCardState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_qqu2g")
+state = 5
 
 [node name="DisplayName" type="Label" parent="."]
 layout_mode = 0

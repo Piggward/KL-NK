@@ -4,6 +4,10 @@ const DRAG_MINIMUM_THRESHOLD := 0.07
 
 var minimum_drag_time_elapsed := false
 
+const DRAG_MINIMUM_THRESHOLD := 0.07
+
+var minimum_drag_time_elapsed := false
+
 func enter() -> void:
 	# set position
 	var card_area = card_ui.targets.front()
@@ -27,6 +31,9 @@ func on_input(_event: InputEvent) -> void:
 	pass
 
 func on_gui_input(_event: InputEvent) -> void:
+	if _event.is_action_pressed(("left_mouse")) and minimum_drag_time_elapsed:
+		transition_requested.emit(self, CardState.State.BASE)
+		Events.card_removed.emit(card_ui.card)
 	if _event.is_action_pressed(("left_mouse")) and minimum_drag_time_elapsed:
 		transition_requested.emit(self, CardState.State.BASE)
 		Events.card_removed.emit(card_ui.card)

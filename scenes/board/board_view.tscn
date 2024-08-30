@@ -1,19 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=16 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
 [ext_resource type="PackedScene" uid="uid://cyesjys2df0k0" path="res://scenes/card_play_area/played_icon_display.tscn" id="2_gki5r"]
 [ext_resource type="Script" path="res://scenes/card_play_area/played_icon_display.gd" id="3_r1enh"]
+[ext_resource type="PackedScene" uid="uid://db3mfgpfkjfbn" path="res://scenes/player/player.tscn" id="3_vis25"]
 [ext_resource type="Script" path="res://scenes/card_play_area/played_cards.gd" id="4_s2pir"]
 [ext_resource type="Script" path="res://scenes/board/card_played_area.gd" id="5_dbav2"]
-[ext_resource type="Script" path="res://scenes/TurnManager/turn_manager.gd" id="8_1e80b"]
+[ext_resource type="PackedScene" uid="uid://tq7ye5cjssut" path="res://scenes/maps_ui/maps_ui.tscn" id="9_am3la"]
 [ext_resource type="Script" path="res://scenes/board/shop_container.gd" id="9_tw2uv"]
 [ext_resource type="Script" path="res://scenes/board/Shop.gd" id="9_vvd6u"]
-[ext_resource type="Script" path="res://scenes/Player/Player.gd" id="11_fhfhh"]
 [ext_resource type="Resource" uid="uid://5hi0ubtp6two" path="res://resources/card_resources/starting_deck.tres" id="13_2yrrp"]
+[ext_resource type="Script" path="res://scenes/turn_manager/turn_manager.gd" id="13_t75d6"]
 [ext_resource type="Script" path="res://scenes/board/end_turn_button.gd" id="14_hhj5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc87n"]
+size = Vector2(230.273, 222.436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdai0"]
+size = Vector2(189, 221)
 size = Vector2(230.273, 222.436)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdai0"]
@@ -30,6 +35,8 @@ modulate = Color(0.431373, 0.392157, 0.352941, 1)
 texture_filter = 1
 position = Vector2(921.157, 585.192)
 scale = Vector2(28.8076, 18.244)
+position = Vector2(921.157, 585.192)
+scale = Vector2(28.8076, 18.244)
 texture = ExtResource("1_l6clk")
 metadata/_edit_lock_ = true
 
@@ -37,7 +44,12 @@ metadata/_edit_lock_ = true
 position = Vector2(1036, 534)
 collision_mask = 2
 script = ExtResource("5_dbav2")
+[node name="CardPlayArea" type="Area2D" parent="." groups=["card_play_area"]]
+position = Vector2(1036, 534)
+collision_mask = 2
+script = ExtResource("5_dbav2")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardPlayArea"]
 shape = SubResource("RectangleShape2D_cc87n")
 
@@ -68,7 +80,67 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("4_s2pir")
 
+[node name="PlayedIconDisplay" parent="CardPlayArea" instance=ExtResource("2_gki5r")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = -111.0
+offset_right = -46.0
+offset_bottom = -99.0
+grow_horizontal = 2
+scale = Vector2(3.11565, 6.10098)
+script = ExtResource("3_r1enh")
+
+[node name="PlayedCards" type="HBoxContainer" parent="CardPlayArea"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = 1.0
+offset_right = 116.0
+offset_bottom = 111.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+script = ExtResource("4_s2pir")
+
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="MapsUi" parent="BoardUI" instance=ExtResource("9_am3la")]
+
+[node name="EndTurnButton" type="Control" parent="BoardUI"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 758.0
+offset_top = 489.0
+offset_right = 858.0
+offset_bottom = 529.0
+script = ExtResource("14_hhj5e")
+
+[node name="ColorRect" type="ColorRect" parent="BoardUI/EndTurnButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.709804, 0.576471, 0.415686, 1)
+
+[node name="Label" type="Label" parent="BoardUI/EndTurnButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "End Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hand" type="HBoxContainer" parent="BoardUI"]
 anchors_preset = 7
@@ -84,6 +156,10 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("2_20mwe")
 
+[node name="Player1" parent="BoardUI" instance=ExtResource("3_vis25")]
+position = Vector2(105, 111)
+deck = ExtResource("13_2yrrp")
+
 [node name="Shop" type="Area2D" parent="."]
 position = Vector2(985, 259)
 script = ExtResource("9_vvd6u")
@@ -92,7 +168,7 @@ script = ExtResource("9_vvd6u")
 scale = Vector2(1.7625, 0.713818)
 shape = SubResource("RectangleShape2D_cdai0")
 
-[node name="Reserve" type="HBoxContainer" parent="Shop"]
+[node name="ShopContainer" type="HBoxContainer" parent="Shop"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -108,38 +184,7 @@ alignment = 1
 script = ExtResource("9_tw2uv")
 
 [node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("activePlayer")]
-script = ExtResource("8_1e80b")
-activePlayer = NodePath("../Player")
+script = ExtResource("13_t75d6")
+activePlayer = NodePath("../BoardUI/Player1")
 
-[node name="EndTurnButton" type="Control" parent="."]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 820.0
-offset_top = 605.0
-offset_right = 920.0
-offset_bottom = 645.0
-script = ExtResource("14_hhj5e")
-
-[node name="ColorRect" type="ColorRect" parent="EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.709804, 0.576471, 0.415686, 1)
-
-[node name="Label" type="Label" parent="EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "End Turn"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="gui_input" from="EndTurnButton" to="EndTurnButton" method="_on_gui_input"]
+[connection signal="gui_input" from="BoardUI/EndTurnButton" to="BoardUI/EndTurnButton" method="_on_gui_input"]

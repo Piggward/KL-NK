@@ -1,7 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://n2mgpmoqsqb"]
+[gd_scene load_steps=10 format=3 uid="uid://n2mgpmoqsqb"]
 
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_ege2o"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_0hqcf"]
+[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="2_8loiq"]
 [ext_resource type="Script" path="res://resources/card_resources/card.gd" id="2_8loiq"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/base_card_state.gd" id="3_n6cjx"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/played_card_state.gd" id="6_qqu2g"]
@@ -21,7 +23,9 @@ effect = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12cb"]
 size = Vector2(150.348, 204.838)
+size = Vector2(150.348, 204.838)
 
+[node name="CardUi" type="Control" groups=["card_ui"]]
 [node name="CardUi" type="Control" groups=["card_ui"]]
 custom_minimum_size = Vector2(80, 110)
 layout_mode = 3
@@ -132,5 +136,7 @@ autowrap_mode = 2
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
 [connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
 [connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

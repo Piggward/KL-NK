@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://db3mfgpfkjfbn"]
+
+[ext_resource type="Texture2D" uid="uid://dmj1fw6cdy64k" path="res://Art/Pixel Adventure pack/Free/Main Characters/Ninja Frog/Fall (32x32).png" id="1_7ta37"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="2_8vgqa"]
+
+[node name="Sprite2D" type="Sprite2D" groups=["player"]]
+texture = ExtResource("1_7ta37")
+script = ExtResource("2_8vgqa")

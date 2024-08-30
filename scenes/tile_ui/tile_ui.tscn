@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://scenes/tile_ui/tile_ui.gd" id="1_yaevs"]
 [ext_resource type="Script" path="res://scenes/tile_ui/tile_state_machine.gd" id="2_cbcus"]
 [ext_resource type="Script" path="res://scenes/tile_ui/tile_states/tile_idle_state.gd" id="3_86ian"]
-[ext_resource type="Script" path="res://scenes/tile_ui/tile_selected_state.gd" id="4_4uw4y"]
-[ext_resource type="Script" path="res://scenes/tile_ui/tile_states/tile_focused_state.gd" id="4_6pney"]
+[ext_resource type="Script" path="res://scenes/tile_ui/tile_states/tile_available_state.gd" id="5_1wyn5"]
+[ext_resource type="Script" path="res://scenes/tile_ui/tile_states/tile_selected_state.gd" id="5_2ei0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmrcb"]
 size = Vector2(48, 48)
 
-[node name="TileUI" type="Control"]
+[node name="TileUI" type="Control" groups=["tiles"]]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ClickArea" type="Area2D" parent="."]
 collision_mask = 0
@@ -44,12 +46,12 @@ initial_state = NodePath("TileIdleState")
 [node name="TileIdleState" type="Node" parent="TileStateMachine"]
 script = ExtResource("3_86ian")
 
-[node name="TileFocusedState" type="Node" parent="TileStateMachine"]
-script = ExtResource("4_6pney")
+[node name="TileSelectedState" type="Node" parent="TileStateMachine"]
+script = ExtResource("5_2ei0q")
 state = 1
 
-[node name="TileSelectedState" type="Node" parent="TileStateMachine"]
-script = ExtResource("4_4uw4y")
+[node name="TileAvailableState" type="Node" parent="TileStateMachine"]
+script = ExtResource("5_1wyn5")
 state = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

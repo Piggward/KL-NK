@@ -1,7 +1,6 @@
 class_name Hand
 extends HBoxContainer
 const CARD_UI = preload("res://scenes/card_ui/card_ui.tscn")
-const CARD_UI = preload("res://scenes/card_ui/card_ui.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

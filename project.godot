@@ -19,6 +19,7 @@ config/icon="res://Art/Clank!/ClankProjectIcon.png"
 
 Events="*res://global/events.gd"
 MapController="*res://scenes/map_controller/map_controller.gd"
+TurnManager="*res://scenes/turn_manager/turn_manager.gd"
 
 [display]
 

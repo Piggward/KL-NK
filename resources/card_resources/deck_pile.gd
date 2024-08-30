@@ -8,6 +8,7 @@ func empty() -> bool:
 	
 func draw_card() -> Card:
 	var card = cards.pop_front()
+	print("drawing card: ", card)
 	return card
 
 func add_card(card: Card):

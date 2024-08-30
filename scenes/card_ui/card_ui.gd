@@ -1,17 +1,24 @@
 class_name CardUI
 extends Control
 
-@export var card: Card
+@export var card : Card
 signal reparent_requested(which_card_ui: CardUI)
 @onready var card_state_machine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
-@onready var score_area = $DropPointDetector/ScoreArea
+@onready var score_area = $ScoreArea
 @onready var icon_area = $DropPointDetector/IconArea
 @onready var cost_area = $DropPointDetector/CostArea
-@onready var color_rect = $ColorRect
 @onready var purchasable = false
 @onready var removeable = false
+@onready var card_background_color = $CardBackgroundColor
+@onready var card_color = $CardColor
+@onready var display_name = $DisplayName
+@onready var display_effect = $DisplayEffect
+@onready var glow_panel = $GlowPanel
+const BLUE_STYLE = preload("res://scenes/card_ui/styles/blue_style.tres")
+const GOLDEN_STYLE = preload("res://scenes/card_ui/styles/golden_style.tres")
+const EMPTY_STYLE = preload("res://scenes/card_ui/styles/empty_style.tres")
 
 const CARD_ICON = preload("res://scenes/card_ui/card_symbols/card_icon.tscn")
 
@@ -20,6 +27,11 @@ var parent: Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_state_machine.init(self)
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 	
 func _input(event: InputEvent) -> void:
 	card_state_machine.on_input(event)
@@ -33,6 +45,8 @@ func _on_mouse_exited():
 func init():
 	initialize_icons()
 	set_color()
+	display_name.text = card.name
+	display_effect.text = card.effect
 
 func _on_gui_input(event) -> void:
 	card_state_machine.on_gui_input(event)
@@ -46,7 +60,11 @@ func _on_drop_point_detector_area_exited(area):
 	targets.erase(area)
 
 func initialize_icons() -> void:
-	initialize_number_icon("cost", card.cost, cost_area)
+	if card.type == Card.Type.MONSTER:
+		initialize_icon("sword", card.cost, cost_area)
+	else:
+		initialize_number_icon("cost", card.cost, cost_area)
+		
 	initialize_number_icon("score", card.score, score_area)
 	initialize_number_icon("skill", card.skill, icon_area)
 	initialize_icon("boot", card.boots, icon_area)
@@ -68,12 +86,19 @@ func initialize_icon(name, amount, area) -> void:
 func set_color():
 	match card.type:
 		Card.Type.RESERVE:
-			color_rect.color = Color.DARK_GOLDENROD
+			card_color.color = Color.DARK_GOLDENROD
 		Card.Type.MONSTER:
-			color_rect.color = Color.RED
+			card_color.color = Color.RED
 		Card.Type.STARTING:
-			color_rect.color = Color.GRAY
+			card_color.color = Color.GRAY
 		Card.Type.EVENT:
-			color_rect.color = Color.PURPLE
+			card_color.color = Color.PURPLE
 		Card.Type.DUNGEON:
-			color_rect.color = Color.BLUE
+			card_color.color = Color.BLUE
+			
+func set_purchasable(value):
+	purchasable = value;
+	if purchasable:
+		glow_panel.set("theme_override_styles/panel", GOLDEN_STYLE)
+	else:
+		glow_panel.set("theme_override_styles/panel", EMPTY_STYLE)

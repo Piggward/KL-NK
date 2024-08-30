@@ -11,3 +11,4 @@ swords = 0
 cost = 0
 type = 1
 name = "Stumble"
+effect = "+1 CLANK"

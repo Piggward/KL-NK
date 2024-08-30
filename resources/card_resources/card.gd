@@ -11,3 +11,4 @@ enum Type {MONSTER, STARTING, EVENT, RESERVE, DUNGEON }
 @export var cost: int
 @export var type: Type
 @export var name: String
+@export var effect: String

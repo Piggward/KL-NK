@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_0hqcf"]
 [ext_resource type="Script" path="res://resources/card_resources/card.gd" id="2_8loiq"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/base_card_state.gd" id="3_n6cjx"]
-[ext_resource type="Script" path="res://scenes/card_ui/card_states/played_card_state.gd" id="6_qqu2g"]
-[ext_resource type="Theme" uid="uid://chpg5hhen7b3p" path="res://main_theme.tres" id="8_ggq8a"]
-[ext_resource type="Script" path="res://scenes/card_ui/card_states/reserve_card_state.gd" id="8_jrhae"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/clicked_card_state.gd" id="4_ac13j"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/dragging_card_state.gd" id="5_mlwwx"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/released_card_state.gd" id="6_axg88"]
 
 [sub_resource type="Resource" id="Resource_dkvmb"]
 script = ExtResource("2_8loiq")
@@ -17,7 +17,6 @@ swords = 1
 cost = 0
 type = 0
 name = ""
-effect = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12cb"]
 size = Vector2(150.348, 204.838)
@@ -25,57 +24,45 @@ size = Vector2(150.348, 204.838)
 [node name="CardUi" type="Control" groups=["card_ui"]]
 custom_minimum_size = Vector2(80, 110)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 80.0
-offset_bottom = 110.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1072.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ege2o")
 card = SubResource("Resource_dkvmb")
 
-[node name="GlowPanel" type="Panel" parent="."]
-layout_mode = 1
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 81.0
-offset_bottom = 111.0
-mouse_filter = 2
-
 [node name="CardBackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -92.0
+offset_top = 24.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 mouse_filter = 2
 color = Color(0.401634, 0.503843, 0.321135, 1)
 
-[node name="CardColor" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 18.0
-mouse_filter = 2
-
-[node name="ScoreArea" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -19.0
-offset_bottom = 18.0
-grow_horizontal = 0
-alignment = 1
-
 [node name="DropPointDetector" type="Area2D" parent="."]
-position = Vector2(5.96046e-08, 5.96046e-08)
-scale = Vector2(0.997881, 1.09817)
+scale = Vector2(0.996225, 1.08645)
 monitorable = false
 
 [node name="IconArea" type="VBoxContainer" parent="DropPointDetector"]
-offset_top = 20.0333
-offset_right = 16.0
-offset_bottom = 100.033
+offset_top = 22.0
+offset_right = 15.0
+offset_bottom = 100.0
+
+[node name="ScoreArea" type="HBoxContainer" parent="DropPointDetector"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 59.0
+offset_right = 80.0
+offset_bottom = 21.0
+grow_horizontal = 0
+alignment = 1
 
 [node name="CostArea" type="HBoxContainer" parent="DropPointDetector"]
 anchors_preset = 1
@@ -100,34 +87,30 @@ initial_state = NodePath("BaseCardState")
 [node name="BaseCardState" type="Node" parent="CardStateMachine"]
 script = ExtResource("3_n6cjx")
 
-[node name="ReserveCardState" type="Node" parent="CardStateMachine"]
-script = ExtResource("8_jrhae")
-state = 4
+[node name="ClickedCardState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_ac13j")
+state = 1
 
-[node name="PlayedCardState" type="Node" parent="CardStateMachine"]
-script = ExtResource("6_qqu2g")
-state = 5
+[node name="DraggingCardState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_mlwwx")
+state = 2
+
+[node name="ReleasedCardState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_axg88")
+state = 3
+
+[node name="CardColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 24.0
 
 [node name="DisplayName" type="Label" parent="."]
 layout_mode = 0
 offset_right = 80.0
-offset_bottom = 18.0
-theme_override_font_sizes/font_size = 11
+offset_bottom = 24.0
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="DisplayEffect" type="Label" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 13.0
-offset_top = 33.0
-offset_right = 73.0
-offset_bottom = 87.0
-theme = ExtResource("8_ggq8a")
-theme_override_font_sizes/font_size = 14
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+text_overrun_behavior = 4
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

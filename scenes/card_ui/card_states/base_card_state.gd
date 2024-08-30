@@ -5,6 +5,7 @@ func enter() -> void:
 		await card_ui.ready
 	card_ui.reparent_requested.emit(card_ui)
 
+
 	pass
 
 func exit() -> void:
@@ -15,17 +16,15 @@ func on_input(event: InputEvent) -> void:
 
 func on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
-		if (card_ui.get_parent().name == "Hand"):
-			card_ui.pivot_offset = card_ui.get_global_mouse_position() - card_ui.global_position
-			transition_requested.emit(self, CardState.State.CLICKED)
-		elif (card_ui.purchasable and card_ui.get_parent().name == "ShopContainer"):
-			Events.card_purchased.emit(card_ui.card)
-			if card_ui.card.type != Card.Type.RESERVE:
-				card_ui.queue_free()
-			
+		Events.card_played.emit(card_ui.card)
+		#Just nu tar vi bara bort kortet när det spelas, i framtiden kanske vi vill göra det möjligt att ångra eller se vilka kort man spelat.
+		#transition_requested.emit(self, CardState.State.PLAYED)
+		card_ui.queue_free()
 
 func on_mouse_entered() -> void:
+	card_ui.glow_panel.set("theme_override_styles/panel", card_ui.BLUE_STYLE)
 	pass
 	
 func on_mouse_exited() -> void:
+	card_ui.glow_panel.set("theme_override_styles/panel", card_ui.EMPTY_STYLE)
 	pass

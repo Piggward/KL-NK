@@ -6,6 +6,7 @@ extends Node
 var current_state: CardState
 var states := {}
 
+
 func init(card: CardUI) -> void:
 	for child in get_children():
 		if child is CardState:
@@ -13,6 +14,9 @@ func init(card: CardUI) -> void:
 			child.transition_requested.connect(_on_transition_requested)
 			child.card_ui = card
 			
+	if (card.get_parent().name == "Reserve"):
+		initial_state = states[CardState.State.RESERVE]
+
 	if initial_state:
 		initial_state.enter()
 		current_state = initial_state

@@ -3,7 +3,7 @@ extends HBoxContainer
 @onready var boots_display = $Boots/amount
 @onready var swords_display = $Swords/amount
 @onready var skills_display = $Skills/amount
-@onready var turn_manager = $"../../TurnManager"
+@onready var turn_manager = $"../TurnManager"
 
 func _update_icons(boots, swords, skills):
 	pass

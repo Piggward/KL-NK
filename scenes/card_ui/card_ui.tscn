@@ -23,7 +23,6 @@ effect = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12cb"]
 size = Vector2(150.348, 204.838)
-size = Vector2(150.348, 204.838)
 
 [node name="CardUi" type="Control" groups=["card_ui"]]
 [node name="CardUi" type="Control" groups=["card_ui"]]

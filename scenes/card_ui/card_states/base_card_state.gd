@@ -5,6 +5,7 @@ func enter() -> void:
 		await card_ui.ready
 	card_ui.reparent_requested.emit(card_ui)
 
+
 	pass
 
 func exit() -> void:
@@ -16,7 +17,8 @@ func on_input(event: InputEvent) -> void:
 func on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		Events.card_played.emit(card_ui.card)
-		transition_requested.emit(self, CardState.State.PLAYED)
+		#Just nu tar vi bara bort kortet när det spelas, i framtiden kanske vi vill göra det möjligt att ångra eller se vilka kort man spelat.
+		#transition_requested.emit(self, CardState.State.PLAYED)
 		card_ui.queue_free()
 
 func on_mouse_entered() -> void:

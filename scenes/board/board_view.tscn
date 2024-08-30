@@ -84,63 +84,30 @@ script = ExtResource("4_s2pir")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -114.0
-offset_top = -111.0
-offset_right = -46.0
-offset_bottom = -99.0
+offset_left = 922.0
+offset_top = 423.0
+offset_right = 990.0
+offset_bottom = 435.0
 grow_horizontal = 2
 scale = Vector2(3.11565, 6.10098)
 script = ExtResource("3_r1enh")
 
-[node name="PlayedCards" type="HBoxContainer" parent="CardPlayArea"]
-anchors_preset = 3
+[node name="Reserve" type="HBoxContainer" parent="."]
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -115.0
-offset_top = 1.0
-offset_right = 116.0
-offset_bottom = 111.0
+anchor_bottom = 0.5
+offset_left = 819.0
+offset_top = 226.0
+offset_right = 1151.0
+offset_bottom = 336.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 alignment = 1
-script = ExtResource("4_s2pir")
+script = ExtResource("6_5ddfp")
 
 [node name="BoardUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
-
-[node name="MapsUi" parent="BoardUI" instance=ExtResource("9_am3la")]
-
-[node name="EndTurnButton" type="Control" parent="BoardUI"]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 758.0
-offset_top = 489.0
-offset_right = 858.0
-offset_bottom = 529.0
-script = ExtResource("14_hhj5e")
-
-[node name="ColorRect" type="ColorRect" parent="BoardUI/EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.709804, 0.576471, 0.415686, 1)
-
-[node name="Label" type="Label" parent="BoardUI/EndTurnButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "End Turn"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Hand" type="HBoxContainer" parent="BoardUI"]
 anchors_preset = 7

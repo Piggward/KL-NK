@@ -5,7 +5,6 @@ func enter() -> void:
 		await card_ui.ready
 	card_ui.reparent_requested.emit(card_ui)
 
-
 	pass
 
 func exit() -> void:

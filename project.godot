@@ -18,8 +18,9 @@ config/icon="res://Art/Clank!/ClankProjectIcon.png"
 [autoload]
 
 Events="*res://global/events.gd"
-MapController="*res://global/map_controller.gd"
+GameManager="*res://global/game_manager.gd"
 TurnManager="*res://global/turn_manager.gd"
+MapController="*res://global/map_controller.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=9 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/hand/hand.gd" id="2_20mwe"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://scenes/board/reserve.gd" id="4_fnwyj"]
 [ext_resource type="PackedScene" uid="uid://tq7ye5cjssut" path="res://scenes/maps_ui/maps_ui.tscn" id="6_0y8i6"]
 [ext_resource type="PackedScene" uid="uid://c4l1sfpr27150" path="res://scenes/end_turn/end_turn_button.tscn" id="9_c08ly"]
-[ext_resource type="Resource" uid="uid://5hi0ubtp6two" path="res://resources/card_resources/starting_deck.tres" id="13_2yrrp"]
 
 [node name="BoardView" type="Node2D"]
 
@@ -55,7 +54,6 @@ script = ExtResource("2_20mwe")
 
 [node name="Player1" parent="BoardUI" instance=ExtResource("3_vis25")]
 position = Vector2(105, 111)
-deck = ExtResource("13_2yrrp")
 
 [node name="PlayedIconDisplay" parent="BoardUI" instance=ExtResource("2_gki5r")]
 anchors_preset = 5

@@ -22,7 +22,6 @@ func add_card(card: Card):
 	add_child(card_UI)
 	card_UI.parent = self
 	card_UI.card = card
-	print("creating card reserve")
 	card_UI.init()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

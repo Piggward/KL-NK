@@ -7,7 +7,15 @@ func _ready():
 	pass # Replace with function body.
 
 func enter():
+	TurnManager.update_icons.connect(_on_update_icons)
 	pass
+
+# this logic should be moved to shop-container in the future I think.
+func _on_update_icons(boots, swords, skill):
+	if card_ui.card.type == Card.Type.MONSTER:
+		card_ui.set_purchasable(card_ui.card.cost <= swords)
+	else:
+		card_ui.set_purchasable(card_ui.card.cost <= skill)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -10,13 +10,14 @@ func _ready():
 			cardUI.parent = self
 			cardUI.reparent_requested.connect(on_card_ui_reparent_requested)
 			
-func add_card(card: Card):
-	var card_UI = CARD_UI.instantiate()
-	add_child(card_UI)
-	card_UI.parent = self
-	card_UI.card = card
-	card_UI.reparent_requested.connect(on_card_ui_reparent_requested)
-	card_UI.init()
+func add_cards(cards: Array[Card]):
+	for card in cards:
+		var card_UI = CARD_UI.instantiate()
+		add_child(card_UI)
+		card_UI.parent = self
+		card_UI.card = card
+		card_UI.reparent_requested.connect(on_card_ui_reparent_requested)
+		card_UI.init()
 
 func on_card_ui_reparent_requested(child: CardUI) -> void:
 	child.reparent(self)

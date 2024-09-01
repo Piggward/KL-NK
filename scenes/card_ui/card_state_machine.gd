@@ -16,6 +16,9 @@ func init(card: CardUI) -> void:
 			
 	if (card.get_parent().name == "Reserve"):
 		initial_state = states[CardState.State.RESERVE]
+	
+	if (card.get_parent().name == "Hand"):
+		initial_state = states[CardState.State.BASE]
 
 	if initial_state:
 		initial_state.enter()

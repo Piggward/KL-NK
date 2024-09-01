@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
-[ext_resource type="Script" path="res://scenes/Hand/hand.gd" id="2_20mwe"]
+[ext_resource type="Script" path="res://scenes/hand/hand.gd" id="2_20mwe"]
 [ext_resource type="PackedScene" uid="uid://cyesjys2df0k0" path="res://scenes/card_play_area/played_icon_display.tscn" id="2_gki5r"]
 [ext_resource type="Script" path="res://scenes/card_play_area/played_icon_display.gd" id="3_r1enh"]
 [ext_resource type="PackedScene" uid="uid://db3mfgpfkjfbn" path="res://scenes/player/player.tscn" id="3_vis25"]

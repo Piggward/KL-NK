@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkgc372o3m74y"]
+[gd_scene load_steps=10 format=3 uid="uid://dkgc372o3m74y"]
 
 [ext_resource type="Texture2D" uid="uid://cupncd14ktmkm" path="res://Art/Pixel Adventure pack/Free/Background/Yellow.png" id="1_l6clk"]
 [ext_resource type="Script" path="res://scenes/hand/hand.gd" id="2_20mwe"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/board/reserve.gd" id="4_fnwyj"]
 [ext_resource type="PackedScene" uid="uid://tq7ye5cjssut" path="res://scenes/maps_ui/maps_ui.tscn" id="6_0y8i6"]
 [ext_resource type="PackedScene" uid="uid://c4l1sfpr27150" path="res://scenes/end_turn/end_turn_button.tscn" id="9_c08ly"]
+[ext_resource type="Script" path="res://scenes/clank_area/clank_area.gd" id="9_gb72i"]
 
 [node name="BoardView" type="Node2D"]
 
@@ -72,3 +73,10 @@ offset_left = 801.0
 offset_top = 588.0
 offset_right = 910.0
 offset_bottom = 644.0
+
+[node name="ClankArea" type="Control" parent="BoardUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_gb72i")

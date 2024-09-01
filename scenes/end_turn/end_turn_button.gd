@@ -1,13 +1,15 @@
 class_name EndTurnButton
 extends Control
 @onready var label = $Label
+@onready var color = $ColorRect
 
 var minimum_time_elapsed := false
 const MINIMUM_THRESHOLD := 0.07
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = "start game"
+	label.text = "Start game"
+	color.color = Color.LIME_GREEN
 	Events.start_game.connect(_on_start_game)
 	
 	minimum_time_elapsed = false
@@ -17,6 +19,7 @@ func _ready():
 
 
 func _on_start_game():
+	color.color = Color.DARK_RED
 	label.text = "end turn"
 	pass
 

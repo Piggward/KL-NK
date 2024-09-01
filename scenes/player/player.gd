@@ -1,9 +1,13 @@
 class_name Player
 extends Node
 
+@export var player_color: PlayerColor
 @export var deck : DeckPile
 var draw_pile := DeckPile.new()
 var discard_pile := DeckPile.new()
+var gold = 0
+
+enum PlayerColor {GREEN, YELLOW, RED, BLUE}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

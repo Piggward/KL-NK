@@ -24,6 +24,8 @@ func start_turn():
 
 func _on_card_played(card: Card) -> void:
 	print("card played: ", card.name)
+	if card.has_effect:
+		card.apply_effects()
 	activePlayer.discard_pile.cards.append(card)
 	update_values(currentBoots+card.boots, currentSwords+card.swords, currentSkill+card.skill)
 	pass
@@ -36,7 +38,6 @@ func _on_card_purchased(card: Card):
 	if card.type == Card.Type.MONSTER:
 		print("monster defeated: ", card.name);
 		update_values(currentBoots, currentSwords-card.cost, currentSkill)
-		return
 	
 	if card.type == Card.Type.DUNGEON or card.type == Card.Type.RESERVE:
 		if currentSkill < card.cost:
@@ -44,6 +45,9 @@ func _on_card_purchased(card: Card):
 		print("card purchased: ", card.name)
 		activePlayer.discard_pile.add_card(card)
 		update_values(currentBoots, currentSwords, currentSkill - card.cost)
+	
+	if card.has_effect:
+		card.apply_effects()
 	
 
 func _on_try_end_turn():

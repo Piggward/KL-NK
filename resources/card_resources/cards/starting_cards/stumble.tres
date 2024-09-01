@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://c5nm2pn8ad0q4"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c5nm2pn8ad0q4"]
 
-[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="1_gibkx"]
+[ext_resource type="Script" path="res://resources/card_resources/cards/starting_cards/stumble.gd" id="1_ed51v"]
 
 [resource]
-script = ExtResource("1_gibkx")
+script = ExtResource("1_ed51v")
 skill = 0
 score = 0
 boots = 0
@@ -11,4 +11,5 @@ swords = 0
 cost = 0
 type = 1
 name = "Stumble"
-effect = "+1 CLANK"
+effect_text = "+1 clank"
+has_effect = true

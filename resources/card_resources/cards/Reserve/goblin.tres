@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cnh1sk28bw35d"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cnh1sk28bw35d"]
 
-[ext_resource type="Script" path="res://resources/card_resources/card.gd" id="1_42y0m"]
+[ext_resource type="Script" path="res://resources/card_resources/cards/Reserve/goblin.gd" id="1_ueg6c"]
 
 [resource]
-script = ExtResource("1_42y0m")
+script = ExtResource("1_ueg6c")
 skill = 0
 score = 0
 boots = 0
@@ -11,4 +11,5 @@ swords = 0
 cost = 2
 type = 0
 name = "Goblin"
-effect = "DEFEAT: +1 GOLD"
+effect_text = "DEFEAT: +1 gold"
+has_effect = true

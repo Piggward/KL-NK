@@ -11,3 +11,5 @@ swords = 0
 cost = 0
 type = 1
 name = "Burgle"
+effect_text = ""
+has_effect = false

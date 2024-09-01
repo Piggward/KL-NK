@@ -45,7 +45,6 @@ func set_next_player():
 	var currentPlayer = players.pop_front()
 	players.append(currentPlayer)
 	TurnManager.activePlayer = players[0]
-	
 
 func connect_to_events():
 	Events.end_turn.connect(_on_end_turn)

@@ -46,7 +46,7 @@ func init():
 	initialize_icons()
 	set_color()
 	display_name.text = card.name
-	display_effect.text = card.effect
+	display_effect.text = card.effect_text
 
 func _on_gui_input(event) -> void:
 	card_state_machine.on_gui_input(event)

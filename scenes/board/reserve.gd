@@ -1,5 +1,5 @@
 class_name Reserve
-extends HBoxContainer
+extends VBoxContainer
 @onready var reserve_card_state = $CardStateMachine/ReserveCardState
 @onready var card_state_machine = $CardStateMachine
 

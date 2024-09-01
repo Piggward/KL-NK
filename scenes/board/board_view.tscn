@@ -24,21 +24,6 @@ metadata/_edit_lock_ = true
 
 [node name="MapsUi" parent="BoardUI" instance=ExtResource("6_0y8i6")]
 
-[node name="Reserve" type="HBoxContainer" parent="BoardUI" groups=["reserve"]]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -333.0
-offset_top = -98.0
-offset_right = -1.0
-offset_bottom = 12.0
-grow_horizontal = 0
-grow_vertical = 2
-alignment = 1
-script = ExtResource("4_fnwyj")
-
 [node name="Hand" type="HBoxContainer" parent="BoardUI" groups=["hand"]]
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,26 +38,52 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("2_20mwe")
 
+[node name="Reserve" type="VBoxContainer" parent="BoardUI" groups=["reserve"]]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -324.0
+offset_right = -9.0
+offset_bottom = 216.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+alignment = 1
+script = ExtResource("4_fnwyj")
+
 [node name="Player1" parent="BoardUI" instance=ExtResource("3_vis25")]
 position = Vector2(105, 111)
 
 [node name="PlayedIconDisplay" parent="BoardUI" instance=ExtResource("2_gki5r")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 346.0
-offset_top = 423.0
-offset_right = 414.0
-offset_bottom = 435.0
-grow_horizontal = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -79.0001
+offset_right = -160.0
+offset_bottom = -67.0001
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(3.11565, 6.10098)
 script = ExtResource("3_r1enh")
 
 [node name="EndTurnButton" parent="BoardUI" instance=ExtResource("9_c08ly")]
-offset_left = 801.0
-offset_top = 588.0
-offset_right = 910.0
-offset_bottom = 644.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 234.0
+offset_top = -62.0
+offset_right = 343.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="ClankArea" type="Control" parent="BoardUI"]
 layout_mode = 3

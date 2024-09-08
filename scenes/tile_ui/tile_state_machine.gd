@@ -30,12 +30,13 @@ func on_mouse_exited() -> void:
 	if current_state:
 		current_state.on_mouse_exited()
 		
-func _on_reset(sender: TileState) -> void:
-	if current_state == sender:
-		return
+func _on_reset() -> void:
+	print("[TileUi] Resetting tile: %s", get_instance_id())
+	# if current_state == sender:
+	# 	return
 		
-	if current_state:
-		current_state.exit()
+	# if current_state:
+	# 	current_state.exit()
 	
 	var new_state = states[TileState.State.IDLE]
 	new_state.enter()

@@ -9,5 +9,7 @@ func on_gui_input(event: InputEvent) -> void:
 		# TODO: make TurnManager autoloaded instead so we can easily get active_player?
 		var active_player = get_tree().get_first_node_in_group("player")
 		MapController.move_player_to_tile(active_player, tile_ui)
+		# Send signal that we took a step (TODO: this doesnt feel right, should be handled some other way)
+		TurnManager.decrease_boots.emit(1)
 		# Update tilestate
 		transition_requested.emit(self, TileState.State.SELECTED)
